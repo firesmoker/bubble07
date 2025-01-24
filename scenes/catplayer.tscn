@@ -256,8 +256,8 @@ shape = SubResource("RectangleShape2D_8n5yq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.98298, 1.9456)
 sprite_frames = SubResource("SpriteFrames_p07ug")
-animation = &"swipeeffect"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.991451
+frame_progress = 0.44429
 
 [connection signal="body_entered" from="BubbleDamager" to="BubbleDamager" method="_on_body_entered"]
