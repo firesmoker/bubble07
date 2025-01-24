@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cunujkcdqp1gs"]
+[gd_scene load_steps=5 format=3 uid="uid://cunujkcdqp1gs"]
 
 [ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="1_vmxgs"]
+[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="2_bbh27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpf0"]
 size = Vector2(484, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re561"]
+size = Vector2(492.132, 140.6)
 
 [node name="Platform" type="StaticBody2D"]
 position = Vector2(0, 35)
@@ -16,3 +20,9 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3.73438, 1)
 texture = ExtResource("1_vmxgs")
+
+[node name="Damager" parent="." instance=ExtResource("2_bbh27")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damager"]
+shape = SubResource("RectangleShape2D_re561")
+debug_color = Color(0.894586, 0.255554, 0.494507, 0.42)

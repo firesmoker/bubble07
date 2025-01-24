@@ -41,3 +41,6 @@ func seek_mouse() -> float:
 	var angle = self.get_angle_to(get_global_mouse_position())
 	#print(angle)
 	return angle
+
+func get_damage() -> void:
+	queue_free()
