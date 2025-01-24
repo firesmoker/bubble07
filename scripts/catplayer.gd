@@ -95,6 +95,7 @@ func detach_from_ground(time: float = 1) -> void:
 	motion_mode = MOTION_MODE_GROUNDED
 
 func get_damage() -> void:
+	animated_sprite_2d.play("death")
 	if not dying:
 		game.update_wins("bubble")
 		dying = true
