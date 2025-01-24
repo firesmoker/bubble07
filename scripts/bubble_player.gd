@@ -49,6 +49,7 @@ func get_damage() -> void:
 	if not dying:
 		game.update_wins("cat")
 		dying = true
+		print("ouch")
 		#queue_free()
 		respawn()
 
