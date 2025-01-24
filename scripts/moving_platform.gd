@@ -1,7 +1,7 @@
-extends StaticBody2D
+extends AnimatableBody2D
 
 # Movement speed
-var velocity: Vector2 = Vector2(0,0)
+#var velocity: Vector2 = Vector2(0,0)
 @export var speed: float = 200.0
 # Left and right boundaries
 @export var left_limit: float = 0.0

@@ -5,6 +5,7 @@ class_name CatPlayer extends CharacterBody2D
 const SPEED = 900.0
 const JUMP_VELOCITY = -900.0
 @onready var axis: Node2D = $Axis
+var platform_velocity : Vector2
 
 
 func _ready() -> void:
@@ -41,8 +42,11 @@ func _physics_process(delta: float) -> void:
 	elif direction:
 		axis.rotation = 0
 		animated_sprite_2d.flip_h = false
-
+	
+	velocity += platform_velocity
 	move_and_slide()
+	platform_velocity = get_platform_velocity()
+	print(platform_velocity)
 
 func attack() -> void:
 	var timer: SceneTreeTimer = get_tree().create_timer(0.4)

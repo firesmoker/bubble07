@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rljelawplssm"]
+[gd_scene load_steps=5 format=3 uid="uid://cm3jjtd2xstqi"]
 
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="1_21pg1"]
 [ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="2_q0yqh"]
-[ext_resource type="PackedScene" uid="uid://cunujkcdqp1gs" path="res://scenes/platform.tscn" id="3_lbyco"]
-[ext_resource type="PackedScene" uid="uid://d1hrbi74p7qd5" path="res://scenes/catplayer.tscn" id="4_t87oy"]
+[ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="3_lbyco"]
+[ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="4_t87oy"]
 
 [node name="GameTest1" type="Node2D"]
 

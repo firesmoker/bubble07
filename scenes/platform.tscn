@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cunujkcdqp1gs"]
+[gd_scene load_steps=5 format=3 uid="uid://ncbvum04cvdu"]
 
 [ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="1_vmxgs"]
-[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="2_bbh27"]
+[ext_resource type="PackedScene" path="res://scenes/damager.tscn" id="2_bbh27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpf0"]
 size = Vector2(484, 134)

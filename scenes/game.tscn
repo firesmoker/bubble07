@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://f4audln8i5r3"]
+[gd_scene load_steps=3 format=3 uid="uid://f4audln8i5r3"]
 
-[ext_resource type="PackedScene" uid="uid://d1hrbi74p7qd5" path="res://scenes/catplayer.tscn" id="1_4sxkf"]
-[ext_resource type="PackedScene" uid="uid://cunujkcdqp1gs" path="res://scenes/platform.tscn" id="2_xt8os"]
-[ext_resource type="PackedScene" path="res://scenes/moving_platform.tscn" id="3_w4qv2"]
+[ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="1_4sxkf"]
+[ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="2_xt8os"]
 
 [node name="Game" type="Node2D"]
 
@@ -37,7 +36,3 @@ scale = Vector2(3.47529, 0.684542)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
-
-[node name="MovingPlatform" parent="." instance=ExtResource("3_w4qv2")]
-position = Vector2(-161, 144)
-scale = Vector2(1.69457, 0.526316)
