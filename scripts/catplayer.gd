@@ -6,6 +6,7 @@ const SPEED = 900.0
 const JUMP_VELOCITY = -900.0
 @onready var axis: Node2D = $Axis
 var platform_velocity : Vector2
+var attacking: bool = false
 
 
 func _ready() -> void:
@@ -30,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		animated_sprite_2d.play("run")
 		velocity.x = direction * SPEED
-	else:
+	elif not attacking:
 		animated_sprite_2d.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
@@ -49,10 +50,15 @@ func _physics_process(delta: float) -> void:
 	print(platform_velocity)
 
 func attack() -> void:
-	var timer: SceneTreeTimer = get_tree().create_timer(0.4)
+	attacking = true
+	animated_sprite_2d.play("attack")
+	var ready_timer: SceneTreeTimer = get_tree().create_timer(0.55)
+	await ready_timer.timeout
+	var timer: SceneTreeTimer = get_tree().create_timer(0.3)
 	axis.visible = true
 	axis.process_mode = Node.PROCESS_MODE_INHERIT
 	await timer.timeout
+	attacking = false
 	axis.visible = false
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
 

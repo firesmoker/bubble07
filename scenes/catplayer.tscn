@@ -135,7 +135,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -217,6 +217,6 @@ scale = Vector2(1.98298, 1.9456)
 sprite_frames = SubResource("SpriteFrames_p07ug")
 animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.481626
+frame_progress = 0.140765
 
 [connection signal="body_entered" from="BubbleDamager" to="BubbleDamager" method="_on_body_entered"]
