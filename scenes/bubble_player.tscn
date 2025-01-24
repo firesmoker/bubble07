@@ -91,7 +91,7 @@ sprite_frames = SubResource("SpriteFrames_jr56k")
 
 [node name="BubbleSpawn" type="Sprite2D" parent="Axis"]
 modulate = Color(1, 0, 1, 1)
-position = Vector2(123, -1)
+position = Vector2(80, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_1arb3")
 
@@ -99,4 +99,4 @@ texture = ExtResource("1_1arb3")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_daose")
 animation = &"shoot"
-frame_progress = 0.0957783
+frame_progress = 0.280235
