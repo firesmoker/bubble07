@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cih1h4rsfonlq"]
+[gd_scene load_steps=4 format=3 uid="uid://cih1h4rsfonlq"]
 
 [ext_resource type="Script" path="res://scripts/bubble_projectile.gd" id="1_cswgi"]
+[ext_resource type="PackedScene" uid="uid://biulo5q3iuki6" path="res://scenes/bubble_burst.tscn" id="2_qwsdm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdi5e"]
-radius = 128.004
+radius = 55.1224
 
 [node name="BubbleProjectile" type="AnimatableBody2D"]
 scale = Vector2(1.03532, 0.996908)
 collision_layer = 2
 sync_to_physics = false
 script = ExtResource("1_cswgi")
+burst_scene = ExtResource("2_qwsdm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.984139, 0.95283)

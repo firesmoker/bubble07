@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://rljelawplssm"]
+[gd_scene load_steps=5 format=3 uid="uid://rljelawplssm"]
 
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="1_21pg1"]
 [ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="2_q0yqh"]
 [ext_resource type="PackedScene" uid="uid://cunujkcdqp1gs" path="res://scenes/platform.tscn" id="3_lbyco"]
+[ext_resource type="PackedScene" uid="uid://d1hrbi74p7qd5" path="res://scenes/catplayer.tscn" id="4_t87oy"]
 
 [node name="GameTest1" type="Node2D"]
 
@@ -14,7 +15,29 @@ texture = ExtResource("2_q0yqh")
 [node name="BubblePlayer" parent="." instance=ExtResource("1_21pg1")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.3, 0.3)
+zoom = Vector2(0.6, 0.6)
 
 [node name="Platform" parent="." instance=ExtResource("3_lbyco")]
-position = Vector2(500, 0)
+position = Vector2(-223, 385)
+
+[node name="Platform2" parent="." instance=ExtResource("3_lbyco")]
+position = Vector2(67, 636)
+scale = Vector2(8.0071, 0.526316)
+
+[node name="Platform3" parent="." instance=ExtResource("3_lbyco")]
+position = Vector2(-1337, 77)
+rotation = 1.57079
+scale = Vector2(8.0071, 0.526316)
+
+[node name="Platform4" parent="." instance=ExtResource("3_lbyco")]
+position = Vector2(1132, 59)
+rotation = 1.57079
+scale = Vector2(8.0071, 0.526316)
+
+[node name="Platform5" parent="." instance=ExtResource("3_lbyco")]
+position = Vector2(-31, -714)
+rotation = 3.14159
+scale = Vector2(8.0071, 0.526316)
+
+[node name="Catplayer" parent="." instance=ExtResource("4_t87oy")]
+position = Vector2(-321, 91)

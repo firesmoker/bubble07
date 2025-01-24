@@ -19,7 +19,7 @@ animations = [{
 radius = 79.1581
 
 [node name="BubblePlayer" type="CharacterBody2D"]
-collision_layer = 2
+collision_layer = 4
 motion_mode = 1
 script = ExtResource("1_v6ibo")
 bubble_projectile = ExtResource("3_fgdmr")
@@ -39,4 +39,5 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_1arb3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 enabled = false

@@ -1,10 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1hrbi74p7qd5"]
+[gd_scene load_steps=22 format=3 uid="uid://d1hrbi74p7qd5"]
 
 [ext_resource type="Script" path="res://scripts/catplayer.gd" id="1_syx8v"]
+[ext_resource type="Shape2D" uid="uid://bcey015rbkb5m" path="res://scene_resources/catplayer_damage_area.tres" id="2_07co7"]
+[ext_resource type="Shape2D" uid="uid://ljub5wjleojk" path="res://scene_resources/catplayer_collider.tres" id="2_ffy5h"]
 [ext_resource type="Texture2D" uid="uid://ehqm4qglilps" path="res://assats/CatIdle-Sheet.png" id="3_71wjl"]
+[ext_resource type="Script" path="res://scripts/damager.gd" id="3_clu65"]
+[ext_resource type="Texture2D" uid="uid://c0jxnbhm345a2" path="res://assats/CatRun-Sheet.png" id="4_mjrp2"]
+[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="6_ic3h7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2s32u"]
-radius = 49.0408
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n5yq"]
+size = Vector2(48, 73.4476)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jt73p"]
 atlas = ExtResource("3_71wjl")
@@ -22,6 +27,38 @@ region = Rect2(128, 0, 64, 64)
 atlas = ExtResource("3_71wjl")
 region = Rect2(192, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceehn"]
+atlas = ExtResource("4_mjrp2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gs2l"]
+atlas = ExtResource("4_mjrp2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lim7s"]
+atlas = ExtResource("4_mjrp2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml7p8"]
+atlas = ExtResource("4_mjrp2")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p2sk"]
+atlas = ExtResource("4_mjrp2")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c4i0"]
+atlas = ExtResource("4_mjrp2")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i04vf"]
+atlas = ExtResource("4_mjrp2")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e8cj"]
+atlas = ExtResource("4_mjrp2")
+region = Rect2(448, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_p07ug"]
 animations = [{
 "frames": [{
@@ -38,21 +75,71 @@ animations = [{
 "texture": SubResource("AtlasTexture_cd8vo")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceehn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gs2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lim7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml7p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p2sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c4i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i04vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e8cj")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
 }]
 
 [node name="Catplayer" type="CharacterBody2D"]
 scale = Vector2(2, 2.158)
+slide_on_ceiling = false
 script = ExtResource("1_syx8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
-scale = Vector2(0.816068, 0.816068)
-shape = SubResource("CircleShape2D_2s32u")
+shape = ExtResource("2_ffy5h")
+
+[node name="BubbleDamager" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("3_clu65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleDamager"]
+position = Vector2(0, 4.63392)
+shape = ExtResource("2_07co7")
+debug_color = Color(0.960516, 6.73831e-07, 0.515587, 0.42)
+
+[node name="Axis" type="Node2D" parent="."]
+
+[node name="PlayerDamager" parent="Axis" instance=ExtResource("6_ic3h7")]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Axis/PlayerDamager"]
+position = Vector2(-55.5, 5.21316)
+shape = SubResource("RectangleShape2D_8n5yq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.98298, 1.9456)
 sprite_frames = SubResource("SpriteFrames_p07ug")
-autoplay = "default"
-frame_progress = 0.75458
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.924128
+
+[connection signal="body_entered" from="BubbleDamager" to="BubbleDamager" method="_on_body_entered"]
