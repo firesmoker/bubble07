@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ncbvum04cvdu"]
 
-[ext_resource type="Texture2D" uid="uid://ds33b6xh61hp5" path="res://assats/TileTemporary.png" id="1_aatsd"]
-[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="2_bbh27"]
+[ext_resource type="Texture2D" uid="uid://bedkpvcmq4xf8" path="res://assats/platform.png" id="1_x4hhk"]
+[ext_resource type="PackedScene" path="res://scenes/damager.tscn" id="2_bbh27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpf0"]
 size = Vector2(484, 134)
@@ -18,8 +18,9 @@ shape = SubResource("RectangleShape2D_ljpf0")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(30.1779, 8.3125)
-texture = ExtResource("1_aatsd")
+position = Vector2(-0.376128, -0.307923)
+scale = Vector2(-0.86573, -0.464644)
+texture = ExtResource("1_x4hhk")
 
 [node name="Damager" parent="." instance=ExtResource("2_bbh27")]
 visible = false

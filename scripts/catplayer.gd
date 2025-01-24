@@ -72,6 +72,7 @@ func attack() -> void:
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
 
 func jump() -> void:
+	animated_sprite_2d.play("jump_up")
 	print("jump")
 	velocity.y = JUMP_VELOCITY
 

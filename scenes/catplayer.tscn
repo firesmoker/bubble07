@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bdpficipe4et0"]
+[gd_scene load_steps=49 format=3 uid="uid://bdpficipe4et0"]
 
 [ext_resource type="Script" path="res://scripts/catplayer.gd" id="1_syx8v"]
 [ext_resource type="Shape2D" uid="uid://bcey015rbkb5m" path="res://scene_resources/catplayer_damage_area.tres" id="2_07co7"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" path="res://scripts/damager.gd" id="3_clu65"]
 [ext_resource type="Texture2D" uid="uid://c0jxnbhm345a2" path="res://assats/CatRun-Sheet.png" id="4_mjrp2"]
 [ext_resource type="Texture2D" uid="uid://c11wurlcs22t5" path="res://assats/CatAttack-Sheet.png" id="6_2c2ot"]
-[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="6_ic3h7"]
+[ext_resource type="PackedScene" path="res://scenes/damager.tscn" id="6_ic3h7"]
+[ext_resource type="Texture2D" uid="uid://ckewbccqo5rno" path="res://assats/CatJumpUp-Sheet.png" id="9_47wsw"]
 [ext_resource type="Texture2D" uid="uid://bge1kedf3y0hg" path="res://assats/SwipeEffect-Sheet.png" id="9_eqrde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n5yq"]
@@ -111,6 +112,18 @@ region = Rect2(128, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3uhf0"]
 atlas = ExtResource("3_71wjl")
 region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or7mr"]
+atlas = ExtResource("9_47wsw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8ovv"]
+atlas = ExtResource("9_47wsw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbgjt"]
+atlas = ExtResource("9_47wsw")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ceehn"]
 atlas = ExtResource("4_mjrp2")
@@ -220,6 +233,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_or7mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8ovv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbgjt")
+}],
+"loop": true,
+"name": &"jump_up",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ceehn")
 }, {
 "duration": 1.0,
@@ -307,8 +334,9 @@ frame_progress = 1.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.98298, 1.9456)
 sprite_frames = SubResource("SpriteFrames_p07ug")
-animation = &"attack"
+animation = &"jump_up"
 autoplay = "idle"
+frame_progress = 0.364546
 
 [connection signal="body_entered" from="BubbleDamager" to="BubbleDamager" method="_on_body_entered"]
 [connection signal="animation_finished" from="Axis/SlashAnimation" to="." method="_on_slash_animation_animation_finished"]
