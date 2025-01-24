@@ -10,6 +10,9 @@ const JUMP_VELOCITY = -900.0
 var platform_velocity : Vector2
 var attacking: bool = false
 var dying: bool = false
+var played_falling: bool = false
+var played_jumping: bool = false
+#var jumping: bool = false
 
 
 func _ready() -> void:
@@ -22,6 +25,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * 2 * delta
+	else:
+		played_jumping = false
+		played_falling = false
 	# Handle jump.
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -32,10 +38,17 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
-	if direction and not attacking:
+	if not is_on_floor():
+		if velocity.y > 0 and not played_jumping and not attacking:
+			animated_sprite_2d.play("jump_down")
+			played_jumping = true
+		elif not played_falling and not attacking:
+			animated_sprite_2d.play("jump_up")
+			played_falling = true
+	elif direction and not attacking:
 		animated_sprite_2d.play("run")
 		velocity.x = direction * SPEED
-	elif not attacking:
+	elif not attacking and is_on_floor():
 		animated_sprite_2d.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
@@ -72,7 +85,6 @@ func attack() -> void:
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
 
 func jump() -> void:
-	animated_sprite_2d.play("jump_up")
 	print("jump")
 	velocity.y = JUMP_VELOCITY
 

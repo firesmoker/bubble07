@@ -10,6 +10,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
 
 [node name="Game" type="Node2D"]
+position = Vector2(-5, 0)
 script = ExtResource("1_2p5m5")
 
 [node name="UI" type="CanvasLayer" parent="."]

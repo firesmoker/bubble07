@@ -18,8 +18,8 @@ shape = SubResource("RectangleShape2D_ljpf0")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.376128, -0.307923)
-scale = Vector2(-0.86573, -0.464644)
+position = Vector2(-0.376128, -0.307919)
+scale = Vector2(-0.86573, -0.488939)
 texture = ExtResource("1_x4hhk")
 
 [node name="Damager" parent="." instance=ExtResource("2_bbh27")]
