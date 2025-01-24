@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -400.0
 @onready var bubble_spawn: Sprite2D = $Axis/BubbleSpawn
 @onready var game: Game = $".."
 var dying: bool = false
+@onready var bubble_sprite: AnimatedSprite2D = $BubbleSprite
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -23,6 +24,10 @@ func _physics_process(delta: float) -> void:
 	velocity.y = move_toward(velocity.y,-50,20)
 	axis.rotation = seek_mouse()
 	move_and_slide()
+	if velocity.x > 10 or velocity.x < -10:
+		bubble_sprite.play("shoot")
+	else:
+		bubble_sprite.play("default")
 
 func create_projectile() -> void:
 	var new_projectile := bubble_projectile.instantiate()

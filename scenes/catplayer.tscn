@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scripts/damager.gd" id="3_clu65"]
 [ext_resource type="Texture2D" uid="uid://c0jxnbhm345a2" path="res://assats/CatRun-Sheet.png" id="4_mjrp2"]
 [ext_resource type="Texture2D" uid="uid://c11wurlcs22t5" path="res://assats/CatAttack-Sheet.png" id="6_2c2ot"]
-[ext_resource type="PackedScene" path="res://scenes/damager.tscn" id="6_ic3h7"]
+[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="6_ic3h7"]
 [ext_resource type="Texture2D" uid="uid://c06fq0mau56pd" path="res://assats/CatDeath-Sheet.png" id="8_gja7d"]
 [ext_resource type="Texture2D" uid="uid://ox6odcak0ali" path="res://assats/CatFallDown-Sheet.png" id="9_14ivv"]
 [ext_resource type="Texture2D" uid="uid://ckewbccqo5rno" path="res://assats/CatJumpUp-Sheet.png" id="9_47wsw"]
