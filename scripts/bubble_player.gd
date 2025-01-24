@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 @onready var axis: Node2D = $Axis
 @export var bubble_projectile: PackedScene
 @onready var bubble_spawn: Sprite2D = $Axis/BubbleSpawn
+@onready var game: Game = $".."
+var dying: bool = false
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -44,4 +46,13 @@ func seek_mouse() -> float:
 	return angle
 
 func get_damage() -> void:
-	queue_free()
+	if not dying:
+		game.update_wins("cat")
+		dying = true
+		#queue_free()
+		respawn()
+
+func respawn() -> void:
+	if not game.game_over_state:
+		global_position = Vector2(0,0)
+		dying = false

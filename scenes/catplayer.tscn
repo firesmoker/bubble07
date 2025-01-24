@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bdpficipe4et0"]
+[gd_scene load_steps=45 format=3 uid="uid://bdpficipe4et0"]
 
 [ext_resource type="Script" path="res://scripts/catplayer.gd" id="1_syx8v"]
 [ext_resource type="Shape2D" uid="uid://bcey015rbkb5m" path="res://scene_resources/catplayer_damage_area.tres" id="2_07co7"]
@@ -7,11 +7,54 @@
 [ext_resource type="Script" path="res://scripts/damager.gd" id="3_clu65"]
 [ext_resource type="Texture2D" uid="uid://c0jxnbhm345a2" path="res://assats/CatRun-Sheet.png" id="4_mjrp2"]
 [ext_resource type="Texture2D" uid="uid://c11wurlcs22t5" path="res://assats/CatAttack-Sheet.png" id="6_2c2ot"]
-[ext_resource type="PackedScene" path="res://scenes/damager.tscn" id="6_ic3h7"]
+[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="6_ic3h7"]
 [ext_resource type="Texture2D" uid="uid://bge1kedf3y0hg" path="res://assats/SwipeEffect-Sheet.png" id="9_eqrde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n5yq"]
 size = Vector2(48, 73.4476)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_004eq"]
+atlas = ExtResource("9_eqrde")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsgf8"]
+atlas = ExtResource("9_eqrde")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clih0"]
+atlas = ExtResource("9_eqrde")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43352"]
+atlas = ExtResource("9_eqrde")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ty0f"]
+atlas = ExtResource("9_eqrde")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vwj0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_004eq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsgf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clih0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43352")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ty0f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dcv7s"]
 atlas = ExtResource("6_2c2ot")
@@ -226,7 +269,7 @@ animations = [{
 }]
 
 [node name="Catplayer" type="CharacterBody2D"]
-scale = Vector2(2, 2.158)
+scale = Vector2(2, 2)
 collision_layer = 8
 slide_on_ceiling = false
 script = ExtResource("1_syx8v")
@@ -245,6 +288,7 @@ shape = ExtResource("2_07co7")
 debug_color = Color(0.960516, 6.73831e-07, 0.515587, 0.42)
 
 [node name="Axis" type="Node2D" parent="."]
+rotation = 3.14159
 
 [node name="PlayerDamager" parent="Axis" instance=ExtResource("6_ic3h7")]
 collision_mask = 6
@@ -253,11 +297,18 @@ collision_mask = 6
 position = Vector2(-55.5, 5.21316)
 shape = SubResource("RectangleShape2D_8n5yq")
 
+[node name="SlashAnimation" type="AnimatedSprite2D" parent="Axis"]
+position = Vector2(-49.5, 1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vwj0s")
+frame = 4
+frame_progress = 1.0
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.98298, 1.9456)
 sprite_frames = SubResource("SpriteFrames_p07ug")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.44429
 
 [connection signal="body_entered" from="BubbleDamager" to="BubbleDamager" method="_on_body_entered"]
+[connection signal="animation_finished" from="Axis/SlashAnimation" to="." method="_on_slash_animation_animation_finished"]
