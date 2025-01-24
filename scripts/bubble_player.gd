@@ -17,7 +17,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	
+	velocity.x = move_toward(velocity.x,0,20)
+	velocity.y = move_toward(velocity.y,-50,20)
 	axis.rotation = seek_mouse()
 	move_and_slide()
 

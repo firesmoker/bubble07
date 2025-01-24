@@ -27,8 +27,10 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
+		animated_sprite_2d.play("run")
 		velocity.x = direction * SPEED
 	else:
+		animated_sprite_2d.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if velocity.x > 0 and direction:
@@ -51,6 +53,7 @@ func attack() -> void:
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
 
 func jump() -> void:
+	print("jump")
 	velocity.y = JUMP_VELOCITY
 
 func detach_from_ground(time: float = 1) -> void:

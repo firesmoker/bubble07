@@ -20,7 +20,7 @@ func _on_timer_timeout() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CatPlayer:
-		body.jump()
-		body.detach_from_ground()
+		#body.jump()
+		#body.detach_from_ground()
 		body.velocity += repel_velocity
 		print("body eneterd burst!")

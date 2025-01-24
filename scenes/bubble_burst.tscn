@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/bubble_burst.gd" id="1_vuxgj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdi5e"]
-radius = 55.1224
+radius = 92.4726
 
 [node name="BubbleBurst" type="Area2D"]
 collision_layer = 0
