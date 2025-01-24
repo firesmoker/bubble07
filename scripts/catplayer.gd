@@ -1,15 +1,19 @@
 class_name CatPlayer extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var slash_animation: AnimatedSprite2D = $Axis/SlashAnimation
+@onready var game: Node2D = $".."
 
 const SPEED = 900.0
 const JUMP_VELOCITY = -900.0
 @onready var axis: Node2D = $Axis
 var platform_velocity : Vector2
 var attacking: bool = false
+var dying: bool = false
 
 
 func _ready() -> void:
+	slash_animation.visible = false
 	axis.visible = false
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
 
@@ -28,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
-	if direction:
+	if direction and not attacking:
 		animated_sprite_2d.play("run")
 		velocity.x = direction * SPEED
 	elif not attacking:
@@ -50,14 +54,19 @@ func _physics_process(delta: float) -> void:
 	print(platform_velocity)
 
 func attack() -> void:
+	if is_on_floor():
+		velocity.x = 0
 	attacking = true
 	animated_sprite_2d.play("attack")
 	var ready_timer: SceneTreeTimer = get_tree().create_timer(0.55)
 	await ready_timer.timeout
 	var timer: SceneTreeTimer = get_tree().create_timer(0.3)
+	slash_animation.visible = true
+	slash_animation.play()
 	axis.visible = true
 	axis.process_mode = Node.PROCESS_MODE_INHERIT
 	await timer.timeout
+	slash_animation.visible = false
 	attacking = false
 	axis.visible = false
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
@@ -73,4 +82,17 @@ func detach_from_ground(time: float = 1) -> void:
 	motion_mode = MOTION_MODE_GROUNDED
 
 func get_damage() -> void:
-	queue_free()
+	if not dying:
+		game.update_wins("bubble")
+		dying = true
+		#queue_free()
+		respawn()
+
+
+func _on_slash_animation_animation_finished() -> void:
+	slash_animation.visible = false
+
+func respawn() -> void:
+	if not game.game_over_state:
+		global_position = Vector2(0,0)
+		dying = false

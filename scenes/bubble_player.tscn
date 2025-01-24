@@ -38,7 +38,3 @@ modulate = Color(1, 0, 1, 1)
 position = Vector2(123, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_1arb3")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-enabled = false
