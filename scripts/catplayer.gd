@@ -61,3 +61,6 @@ func detach_from_ground(time: float = 1) -> void:
 	motion_mode = MOTION_MODE_FLOATING
 	await timer.timeout
 	motion_mode = MOTION_MODE_GROUNDED
+
+func get_damage() -> void:
+	queue_free()

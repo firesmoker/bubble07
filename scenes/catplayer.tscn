@@ -110,6 +110,7 @@ animations = [{
 
 [node name="Catplayer" type="CharacterBody2D"]
 scale = Vector2(2, 2.158)
+collision_layer = 8
 slide_on_ceiling = false
 script = ExtResource("1_syx8v")
 
@@ -140,6 +141,6 @@ scale = Vector2(1.98298, 1.9456)
 sprite_frames = SubResource("SpriteFrames_p07ug")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.00519214
+frame_progress = 0.379663
 
 [connection signal="body_entered" from="BubbleDamager" to="BubbleDamager" method="_on_body_entered"]
