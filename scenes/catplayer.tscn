@@ -186,6 +186,7 @@ animations = [{
 
 [node name="Catplayer" type="CharacterBody2D"]
 scale = Vector2(2, 2.158)
+collision_layer = 8
 slide_on_ceiling = false
 script = ExtResource("1_syx8v")
 

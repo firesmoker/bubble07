@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm3jjtd2xstqi"]
+[gd_scene load_steps=6 format=3 uid="uid://rljelawplssm"]
 
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="1_21pg1"]
 [ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="2_q0yqh"]
-[ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="3_lbyco"]
-[ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="4_t87oy"]
+[ext_resource type="PackedScene" uid="uid://cunujkcdqp1gs" path="res://scenes/platform.tscn" id="3_lbyco"]
+[ext_resource type="PackedScene" uid="uid://bxsc1wv1hhpak" path="res://scenes/spike.tscn" id="4_je54f"]
+[ext_resource type="PackedScene" uid="uid://d1hrbi74p7qd5" path="res://scenes/catplayer.tscn" id="4_t87oy"]
 
 [node name="GameTest1" type="Node2D"]
 
@@ -13,12 +14,16 @@ scale = Vector2(98.9062, 98.9062)
 texture = ExtResource("2_q0yqh")
 
 [node name="BubblePlayer" parent="." instance=ExtResource("1_21pg1")]
+position = Vector2(300, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
 
 [node name="Platform" parent="." instance=ExtResource("3_lbyco")]
 position = Vector2(-223, 385)
+
+[node name="Spike" parent="." instance=ExtResource("4_je54f")]
+modulate = Color(1, 0, 0, 1)
 
 [node name="Platform2" parent="." instance=ExtResource("3_lbyco")]
 position = Vector2(67, 636)
