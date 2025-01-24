@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://f4audln8i5r3"]
+[gd_scene load_steps=4 format=3 uid="uid://f4audln8i5r3"]
 
 [ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="1_4sxkf"]
+[ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assats/background1.png" id="1_fk501"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="2_xt8os"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.521141, 0.521141, 0.521141, 1)
+position = Vector2(11, 357)
+scale = Vector2(3.20557, 3.20557)
+texture = ExtResource("1_fk501")
 
 [node name="Catplayer" parent="." instance=ExtResource("1_4sxkf")]
 position = Vector2(-1226, -219)
