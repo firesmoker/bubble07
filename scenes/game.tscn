@@ -1,30 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://f4audln8i5r3"]
+[gd_scene load_steps=4 format=3 uid="uid://f4audln8i5r3"]
 
-[ext_resource type="PackedScene" uid="uid://d1hrbi74p7qd5" path="res://scenes/catplayer.tscn" id="1_4sxkf"]
-[ext_resource type="PackedScene" uid="uid://cunujkcdqp1gs" path="res://scenes/platform.tscn" id="2_xt8os"]
+[ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="1_4sxkf"]
+[ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="2_xt8os"]
+[ext_resource type="PackedScene" uid="uid://vm3i3ve6takh" path="res://scenes/moving_platform.tscn" id="3_w4qv2"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Catplayer" parent="." instance=ExtResource("1_4sxkf")]
+position = Vector2(-1226, -219)
 
 [node name="Platform" parent="." instance=ExtResource("2_xt8os")]
-position = Vector2(-726, 412)
-scale = Vector2(0.668142, 0.823417)
+position = Vector2(-22, -694)
+scale = Vector2(6.84342, 0.570187)
+
+[node name="Platform6" parent="." instance=ExtResource("2_xt8os")]
+position = Vector2(-6, 711)
+scale = Vector2(6.84342, 0.570187)
+
+[node name="Platform7" parent="." instance=ExtResource("2_xt8os")]
+position = Vector2(-1444, -369)
+rotation = 1.5746
+scale = Vector2(6.84342, 0.570187)
+
+[node name="Platform8" parent="." instance=ExtResource("2_xt8os")]
+position = Vector2(1438, -368)
+rotation = 1.5746
+scale = Vector2(6.84342, 0.570187)
 
 [node name="Platform2" parent="." instance=ExtResource("2_xt8os")]
-position = Vector2(-330, 454)
-scale = Vector2(0.668142, 0.796875)
-
-[node name="Platform3" parent="." instance=ExtResource("2_xt8os")]
-position = Vector2(0, 159)
-scale = Vector2(0.668142, 0.796875)
+position = Vector2(-1448, -55)
+scale = Vector2(2.27182, 0.796875)
 
 [node name="Platform4" parent="." instance=ExtResource("2_xt8os")]
-position = Vector2(395, 295)
-scale = Vector2(0.668142, 0.796875)
-
-[node name="Platform5" parent="." instance=ExtResource("2_xt8os")]
-position = Vector2(782, 442)
-scale = Vector2(0.668142, 0.796875)
+position = Vector2(1560, 444)
+scale = Vector2(3.47529, 0.684542)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("3_w4qv2")]
+position = Vector2(-161, 144)
+scale = Vector2(1.69457, 0.526316)
