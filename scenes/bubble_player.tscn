@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://jr7d1wady43a"]
+[gd_scene load_steps=17 format=3 uid="uid://jr7d1wady43a"]
 
-[ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="1_1arb3"]
 [ext_resource type="Script" path="res://scripts/bubble_player.gd" id="1_v6ibo"]
 [ext_resource type="PackedScene" uid="uid://cih1h4rsfonlq" path="res://scenes/bubble_projectile.tscn" id="3_fgdmr"]
+[ext_resource type="Texture2D" uid="uid://230wje3eden2" path="res://assats/FishIdle.png" id="3_yhjv0"]
+[ext_resource type="Texture2D" uid="uid://by6ovuow1jr1t" path="res://assats/BubbleShootPointer.png" id="4_0y6hu"]
 [ext_resource type="Texture2D" uid="uid://cx2vsjtcfls2u" path="res://assats/BigBubble-Sheet.png" id="4_ir7wu"]
 [ext_resource type="Texture2D" uid="uid://cgydnwcaje4g5" path="res://assats/BigBubbleShoot-Sheet.png" id="5_dx2iv"]
 
@@ -10,6 +11,15 @@
 radius = 40.05
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jr56k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yhjv0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4y8tl"]
 atlas = ExtResource("4_ir7wu")
@@ -90,13 +100,12 @@ sprite_frames = SubResource("SpriteFrames_jr56k")
 [node name="Axis" type="Node2D" parent="."]
 
 [node name="BubbleSpawn" type="Sprite2D" parent="Axis"]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(80, -1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_1arb3")
+position = Vector2(54, -1)
+texture = ExtResource("4_0y6hu")
 
 [node name="BubbleSprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.47451)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_daose")
 animation = &"shoot"
-frame_progress = 0.280235
+frame_progress = 0.626887
