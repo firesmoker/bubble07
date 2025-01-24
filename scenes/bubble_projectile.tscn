@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cih1h4rsfonlq"]
+
+[ext_resource type="Script" path="res://scripts/bubble_projectile.gd" id="1_cswgi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdi5e"]
+radius = 128.004
+
+[node name="BubbleProjectile" type="AnimatableBody2D"]
+scale = Vector2(1.03532, 0.996908)
+collision_layer = 2
+sync_to_physics = false
+script = ExtResource("1_cswgi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.984139, 0.95283)
+shape = SubResource("CircleShape2D_sdi5e")

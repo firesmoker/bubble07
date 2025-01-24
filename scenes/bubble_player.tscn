@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://jr7d1wady43a"]
+
+[ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="1_1arb3"]
+[ext_resource type="Script" path="res://scripts/bubble_player.gd" id="1_v6ibo"]
+[ext_resource type="PackedScene" uid="uid://cih1h4rsfonlq" path="res://scenes/bubble_projectile.tscn" id="3_fgdmr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jr56k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1arb3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d743n"]
+radius = 79.1581
+
+[node name="BubblePlayer" type="CharacterBody2D"]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_v6ibo")
+bubble_projectile = ExtResource("3_fgdmr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jr56k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d743n")
+
+[node name="Axis" type="Node2D" parent="."]
+
+[node name="BubbleSpawn" type="Sprite2D" parent="Axis"]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(123, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1arb3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false

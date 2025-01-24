@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://rljelawplssm"]
+
+[ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="1_21pg1"]
+[ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="2_q0yqh"]
+[ext_resource type="PackedScene" uid="uid://cunujkcdqp1gs" path="res://scenes/platform.tscn" id="3_lbyco"]
+
+[node name="GameTest1" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.214103, 0.214103, 0.214103, 1)
+scale = Vector2(98.9062, 98.9062)
+texture = ExtResource("2_q0yqh")
+
+[node name="BubblePlayer" parent="." instance=ExtResource("1_21pg1")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.3, 0.3)
+
+[node name="Platform" parent="." instance=ExtResource("3_lbyco")]
+position = Vector2(500, 0)
