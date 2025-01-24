@@ -10,7 +10,7 @@ collision_layer = 0
 script = ExtResource("1_vuxgj")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.984139, 0.95283)

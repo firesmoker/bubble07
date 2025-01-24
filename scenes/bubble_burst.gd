@@ -5,6 +5,7 @@ var repel_velocity: Vector2 = Vector2(1000,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(repel_velocity)
 	timer.start()
 
 
@@ -18,5 +19,8 @@ func _on_timer_timeout() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.velocity += repel_velocity
-	print("body eneterd burst!")
+	if body is CatPlayer:
+		body.jump()
+		body.detach_from_ground()
+		body.velocity += repel_velocity
+		print("body eneterd burst!")

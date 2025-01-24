@@ -48,6 +48,7 @@ size = Vector2(48, 73.4476)
 
 [node name="Catplayer" type="CharacterBody2D"]
 scale = Vector2(2, 2.158)
+slide_on_ceiling = false
 script = ExtResource("1_syx8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

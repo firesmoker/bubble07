@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name CatPlayer extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		jump()
 		
 	if Input.is_action_just_pressed("attack"):
 		attack()
@@ -49,3 +49,12 @@ func attack() -> void:
 	await timer.timeout
 	axis.visible = false
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
+
+func jump() -> void:
+	velocity.y = JUMP_VELOCITY
+
+func detach_from_ground(time: float = 1) -> void:
+	var timer: SceneTreeTimer = get_tree().create_timer(time)
+	motion_mode = MOTION_MODE_FLOATING
+	await timer.timeout
+	motion_mode = MOTION_MODE_GROUNDED

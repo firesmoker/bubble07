@@ -19,5 +19,6 @@ func get_damage() -> void:
 
 func burst() -> void:
 	var new_burst = burst_scene.instantiate()
-	new_burst.repel_velocity = velocity
+	new_burst.repel_velocity = velocity * 100
+	new_burst.global_position = global_position
 	get_parent().add_child(new_burst)
