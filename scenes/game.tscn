@@ -134,3 +134,6 @@ scale = Vector2(0.19078, 0.326316)
 position = Vector2(1515, -395)
 scale = Vector2(2, 2)
 texture = ExtResource("11_xly51")
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+volume_db = -3.0
