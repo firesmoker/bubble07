@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://curt8g7fliikb"]
+[gd_scene load_steps=9 format=3 uid="uid://curt8g7fliikb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v18ey"]
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="2_6dq2v"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_r0nuq"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="5_f6urn"]
 [ext_resource type="PackedScene" uid="uid://304cx5i6sfno" path="res://scenes/damage_area.tscn" id="6_54cwn"]
-[ext_resource type="Texture2D" uid="uid://cex1kjpir4apm" path="res://assets/SharpBamboo.png" id="7_ym71c"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
 
@@ -76,51 +75,3 @@ scale = Vector2(3.47529, 0.684542)
 position = Vector2(-1179, 424)
 scale = Vector2(23.65, 45.753)
 metadata/_edit_lock_ = true
-
-[node name="Katana" type="Sprite2D" parent="."]
-position = Vector2(-1005, 835)
-rotation = 1.57079
-scale = Vector2(8, 8)
-texture = ExtResource("7_ym71c")
-
-[node name="Katana2" type="Sprite2D" parent="."]
-position = Vector2(-1005, 728)
-rotation = 1.57079
-scale = Vector2(8, 8)
-texture = ExtResource("7_ym71c")
-
-[node name="Katana3" type="Sprite2D" parent="."]
-position = Vector2(-1005, 631)
-rotation = 1.57079
-scale = Vector2(8, 8)
-texture = ExtResource("7_ym71c")
-
-[node name="Katana4" type="Sprite2D" parent="."]
-position = Vector2(-1005, 526)
-rotation = 1.57079
-scale = Vector2(8, 8)
-texture = ExtResource("7_ym71c")
-
-[node name="Katana5" type="Sprite2D" parent="."]
-position = Vector2(-1005, 419)
-rotation = 1.57079
-scale = Vector2(8, 8)
-texture = ExtResource("7_ym71c")
-
-[node name="Katana6" type="Sprite2D" parent="."]
-position = Vector2(-1005, 301)
-rotation = 1.57079
-scale = Vector2(8, 8)
-texture = ExtResource("7_ym71c")
-
-[node name="Katana7" type="Sprite2D" parent="."]
-position = Vector2(-1005, 192)
-rotation = 1.57079
-scale = Vector2(8, 8)
-texture = ExtResource("7_ym71c")
-
-[node name="Katana8" type="Sprite2D" parent="."]
-position = Vector2(-1005, 72)
-rotation = 1.57079
-scale = Vector2(8, 8)
-texture = ExtResource("7_ym71c")

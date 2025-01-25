@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm3jjtd2xstqi"]
+[gd_scene load_steps=6 format=3 uid="uid://cm3jjtd2xstqi"]
 
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="1_21pg1"]
 [ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="2_q0yqh"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="3_lbyco"]
 [ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="4_t87oy"]
+[ext_resource type="PackedScene" uid="uid://bwiq44674i3iy" path="res://scenes/moving_platform.tscn" id="5_kxeqa"]
 
 [node name="GameTest1" type="Node2D"]
 
@@ -44,3 +45,10 @@ scale = Vector2(8.0071, 0.526316)
 
 [node name="Catplayer" parent="." instance=ExtResource("4_t87oy")]
 position = Vector2(-321, 91)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("5_kxeqa")]
+position = Vector2(-307, 26)
+scale = Vector2(0.19078, 0.326316)
+speed = 200.0
+left_limit = 0.0
+right_limit = 400.0

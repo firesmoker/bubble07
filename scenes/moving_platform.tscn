@@ -1,16 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://vm3i3ve6takh"]
+[gd_scene load_steps=6 format=3 uid="uid://bwiq44674i3iy"]
 
+[ext_resource type="Texture2D" uid="uid://bedkpvcmq4xf8" path="res://assets/platform.png" id="2_g5pcl"]
 [ext_resource type="Script" path="res://scripts/moving_platform.gd" id="2_k23ls"]
-[ext_resource type="Texture2D" uid="uid://re0w6dh1floq" path="res://icon.svg" id="2_yjmsx"]
-[ext_resource type="PackedScene" path="res://scenes/damager.tscn" id="3_rx47l"]
+[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="3_rx47l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpf0"]
-size = Vector2(484, 134)
+size = Vector2(2103.17, 285)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkb2d"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_re561"]
-size = Vector2(492.132, 140.6)
 
 [node name="MovingPlatform" type="AnimatableBody2D"]
 position = Vector2(0, 35)
@@ -22,19 +19,22 @@ right_limit = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ljpf0")
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3.73438, 1)
-texture = ExtResource("2_yjmsx")
+scale = Vector2(3.73438, 0.999995)
+texture = ExtResource("2_g5pcl")
 
 [node name="Area2D" type="Area2D" parent="."]
+process_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_fkb2d")
+metadata/_edit_lock_ = true
 
 [node name="Damager" parent="." instance=ExtResource("3_rx47l")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damager"]
-shape = SubResource("RectangleShape2D_re561")
+shape = SubResource("RectangleShape2D_ljpf0")
 debug_color = Color(0.894586, 0.255554, 0.494507, 0.42)

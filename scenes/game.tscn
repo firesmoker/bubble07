@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://f4audln8i5r3"]
+[gd_scene load_steps=10 format=3 uid="uid://f4audln8i5r3"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_2p5m5"]
 [ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="1_4sxkf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="2_xt8os"]
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_2kjsh"]
 [ext_resource type="PackedScene" uid="uid://304cx5i6sfno" path="res://scenes/damage_area.tscn" id="6_ev8uw"]
+[ext_resource type="PackedScene" uid="uid://bwiq44674i3iy" path="res://scenes/moving_platform.tscn" id="8_vlgm1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
 
@@ -14,6 +15,7 @@
 script = ExtResource("1_2p5m5")
 
 [node name="UI" parent="." instance=ExtResource("2_upbd2")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
@@ -22,6 +24,7 @@ zoom = Vector2(0.6, 0.6)
 position = Vector2(7, -480)
 scale = Vector2(3.20556, 3.20556)
 texture = ExtResource("1_fk501")
+metadata/_edit_lock_ = true
 
 [node name="Catplayer" parent="." instance=ExtResource("1_4sxkf")]
 position = Vector2(-1226, -286)
@@ -127,3 +130,10 @@ scale = Vector2(33.7866, 3.55538)
 [node name="DamageArea3" parent="." instance=ExtResource("6_ev8uw")]
 position = Vector2(16, -810)
 scale = Vector2(159.067, 3.27538)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("8_vlgm1")]
+position = Vector2(-307, 26)
+scale = Vector2(0.19078, 0.326316)
+speed = 200.0
+left_limit = 0.0
+right_limit = 400.0

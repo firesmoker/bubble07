@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		var velocity = position - previous_position
 
 	   # Notify overlapping bodies (e.g., player) about the platform's movement
-	for body in detector.get_overlapping_bodies():
-		if body.has_method("set_platform_velocity"):
-			body.set_platform_velocity(velocity / delta)
+	#for body in detector.get_overlapping_bodies():
+		#if body.has_method("set_platform_velocity"):
+			#body.set_platform_velocity(velocity / delta)
 	previous_position = position
