@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="1_fk501"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="2_xt8os"]
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_2kjsh"]
-[ext_resource type="PackedScene" uid="uid://304cx5i6sfno" path="res://scenes/damage_area.tscn" id="6_ev8uw"]
+[ext_resource type="PackedScene" path="res://scenes/damage_area.tscn" id="6_ev8uw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
 
@@ -96,49 +96,73 @@ material = SubResource("CanvasItemMaterial_uj3f0")
 position = Vector2(-19, 934)
 scale = Vector2(6.84342, 0.570187)
 
-[node name="Platform7" parent="." instance=ExtResource("2_xt8os")]
+[node name="Left Wall" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
 position = Vector2(-1612, -369)
 rotation = 1.5746
 scale = Vector2(6.84342, 0.570187)
 
-[node name="Platform8" parent="." instance=ExtResource("2_xt8os")]
+[node name="Right Wall" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
 position = Vector2(1624, -368)
 rotation = 1.5746
 scale = Vector2(6.84342, 0.570187)
 
+[node name="Platform1" parent="." instance=ExtResource("2_xt8os")]
+modulate = Color(0.554367, 0.339573, 0.29896, 1)
+material = SubResource("CanvasItemMaterial_uj3f0")
+position = Vector2(-1448, -146)
+scale = Vector2(2.27182, 0.556874)
+
 [node name="Platform2" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
-position = Vector2(-1448, -133)
-scale = Vector2(2.27182, 0.796875)
+position = Vector2(1660, -146)
+scale = Vector2(2.27182, 0.556874)
 
 [node name="Platform3" parent="." instance=ExtResource("2_xt8os")]
-modulate = Color(0.554367, 0.339573, 0.29896, 1)
-material = SubResource("CanvasItemMaterial_uj3f0")
-position = Vector2(1660, -133)
-scale = Vector2(2.27182, 0.796875)
-
-[node name="Platform4" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
 position = Vector2(1560, 444)
 scale = Vector2(3.47529, 0.684542)
 
-[node name="Platform5" parent="." instance=ExtResource("2_xt8os")]
+[node name="Moving Platform" parent="." instance=ExtResource("2_xt8os")]
+modulate = Color(0.554367, 0.339573, 0.29896, 1)
+material = SubResource("CanvasItemMaterial_uj3f0")
+position = Vector2(250, -132)
+scale = Vector2(0.795289, 0.684542)
+
+[node name="Moving Platform2" parent="." instance=ExtResource("2_xt8os")]
+modulate = Color(0.554367, 0.339573, 0.29896, 1)
+material = SubResource("CanvasItemMaterial_uj3f0")
+position = Vector2(-356, 310)
+scale = Vector2(0.795289, 0.684542)
+
+[node name="Table" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
 position = Vector2(5.99988, 842)
 scale = Vector2(1.23529, 0.684542)
 
-[node name="Platform6" parent="." instance=ExtResource("2_xt8os")]
+[node name="Barrel" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
 position = Vector2(961, 257)
 scale = Vector2(-0.444705, 2.04454)
+
+[node name="Barrel2" parent="." instance=ExtResource("2_xt8os")]
+modulate = Color(0.554367, 0.339573, 0.29896, 1)
+material = SubResource("CanvasItemMaterial_uj3f0")
+position = Vector2(-1451, -323)
+scale = Vector2(-0.444705, 2.04454)
+
+[node name="Stool" parent="." instance=ExtResource("2_xt8os")]
+modulate = Color(0.554367, 0.339573, 0.29896, 1)
+material = SubResource("CanvasItemMaterial_uj3f0")
+position = Vector2(-935, 773)
+scale = Vector2(-0.364707, 1.67675)
 
 [node name="DamageArea" parent="." instance=ExtResource("6_ev8uw")]
 position = Vector2(-1362, 682)
@@ -147,6 +171,10 @@ scale = Vector2(21.1866, 19.7554)
 [node name="DamageArea2" parent="." instance=ExtResource("6_ev8uw")]
 position = Vector2(1148, 520)
 scale = Vector2(42.9866, 3.55538)
+
+[node name="DamageArea4" parent="." instance=ExtResource("6_ev8uw")]
+position = Vector2(-1248, -73)
+scale = Vector2(33.7866, 3.55538)
 
 [node name="DamageArea3" parent="." instance=ExtResource("6_ev8uw")]
 position = Vector2(16, -810)
