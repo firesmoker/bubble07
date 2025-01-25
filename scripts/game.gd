@@ -12,7 +12,7 @@ static var game_over_state: bool = false
 var CORNELIUS_WINS_1: AudioStream = preload("res://audio/cornelius_wins1.ogg")
 var FIFIN_WINS_1: AudioStream = preload("res://audio/fifin_wins1.ogg")
 var START_SOUND_1: AudioStream = preload("res://audio/start_sound1.ogg")
-var num_wins_to_finish: int = 1
+var num_wins_to_finish: int = 5
 
 
 # Called when the node enters the scene tree for the first time.
