@@ -10,6 +10,8 @@ var CAT_DEATH_1: AudioStream = preload("res://audio/cat_death1.ogg")
 var CAT_GETS_HIT_1: AudioStream = preload("res://audio/cat_gets_hit1.ogg")
 var CAT_JUMP_1: AudioStream = preload("res://audio/cat_jump1.ogg")
 var played_win_animation: bool = false
+@onready var colision_right_up: CollisionShape2D = $Axis/PlayerDamager/ColisionRightUp
+@onready var colision_left_up: CollisionShape2D = $Axis/PlayerDamager/ColisionLeftUp
 
 const SPEED = 900.0
 @export var JUMP_VELOCITY = -1600.0
@@ -36,6 +38,7 @@ func move(direction: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if velocity.x > 0 and direction:
+		
 		axis.rotation = deg_to_rad(180)
 	elif velocity.x == 0:
 		pass
@@ -60,9 +63,15 @@ func handle_movement_animations(direction: float) -> void:
 	
 	if velocity.x > 0 and direction:
 		animated_sprite_2d.flip_h = true
+		colision_right_up.disabled = false
+		colision_left_up.disabled = true
 	elif velocity.x == 0:
 		pass
+		#colision_right_up.disabled = false
+		#colision_left_up.disabled = true
 	elif direction:
+		colision_right_up.disabled = true
+		colision_left_up.disabled = false
 		animated_sprite_2d.flip_h = false
 
 func _physics_process(delta: float) -> void:

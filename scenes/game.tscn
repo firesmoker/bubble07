@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_2p5m5"]
 [ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="1_4sxkf"]
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="1_fk501"]
-[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="2_upbd2"]
+[ext_resource type="PackedScene" uid="uid://bkndgvb2pbpmx" path="res://scenes/ui.tscn" id="2_upbd2"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="2_xt8os"]
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_2kjsh"]
-[ext_resource type="PackedScene" path="res://scenes/damage_area.tscn" id="6_ev8uw"]
+[ext_resource type="PackedScene" uid="uid://bowt8ve3wiejk" path="res://scenes/damage_area.tscn" id="6_ev8uw"]
 [ext_resource type="PackedScene" uid="uid://brsffbvun7ts7" path="res://scenes/table.tscn" id="7_waw1j"]
 [ext_resource type="PackedScene" uid="uid://bwiq44674i3iy" path="res://scenes/moving_platform.tscn" id="8_vlgm1"]
 [ext_resource type="PackedScene" uid="uid://bb33heik8pj7" path="res://scenes/stool.tscn" id="8_yd53u"]
@@ -35,12 +35,13 @@ metadata/_edit_lock_ = true
 
 [node name="Catplayer" parent="." instance=ExtResource("1_4sxkf")]
 position = Vector2(-1226, -286)
+scale = Vector2(3, 3)
 JUMP_VELOCITY = -1300.0
 
 [node name="BubblePlayer" parent="." instance=ExtResource("4_2kjsh")]
 z_index = 0
 position = Vector2(475.168, -73.7118)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="Ceiling" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
@@ -99,6 +100,14 @@ scale = Vector2(18.7866, 14.9554)
 position = Vector2(1520, -488)
 scale = Vector2(6.1765, -23.0777)
 
+[node name="DamageArea6" parent="." instance=ExtResource("6_ev8uw")]
+position = Vector2(1524, -46)
+scale = Vector2(6.1765, -7.3977)
+
+[node name="DamageArea7" parent="." instance=ExtResource("6_ev8uw")]
+position = Vector2(1525, 344)
+scale = Vector2(6.1765, -7.3977)
+
 [node name="DamageArea2" parent="." instance=ExtResource("6_ev8uw")]
 position = Vector2(1196, 520)
 scale = Vector2(42.9866, 3.55538)
@@ -124,7 +133,7 @@ position = Vector2(-301, 310)
 scale = Vector2(0.19078, 0.326316)
 
 [node name="Katana" type="Sprite2D" parent="."]
-position = Vector2(372, 366)
+position = Vector2(1417, -1279)
 scale = Vector2(2, 2)
 texture = ExtResource("11_xly51")
 
@@ -180,9 +189,9 @@ scale = Vector2(2, 2)
 texture = ExtResource("12_d0ved")
 
 [node name="Bamboo9" type="Sprite2D" parent="."]
-position = Vector2(1035, 547)
+position = Vector2(1035.75, 546.246)
 rotation = -3.14159
-scale = Vector2(2, 2)
+scale = Vector2(2.02357, 2.02357)
 texture = ExtResource("12_d0ved")
 
 [node name="Bamboo10" type="Sprite2D" parent="."]
@@ -192,15 +201,175 @@ scale = Vector2(2, 2)
 texture = ExtResource("12_d0ved")
 flip_h = true
 
+[node name="Bamboo39" type="Sprite2D" parent="."]
+position = Vector2(1403, 552)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo41" type="Sprite2D" parent="."]
+position = Vector2(1526, 549)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
 [node name="Bamboo11" type="Sprite2D" parent="."]
-position = Vector2(585, -473)
-rotation = -1.58404
+position = Vector2(-1452, -838)
+rotation = -3.14159
 scale = Vector2(2, 2)
 texture = ExtResource("12_d0ved")
 
 [node name="Bamboo12" type="Sprite2D" parent="."]
-position = Vector2(712, -475)
-rotation = -1.58404
+position = Vector2(-1325, -840)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
+[node name="Bamboo16" type="Sprite2D" parent="."]
+position = Vector2(-1074, -837)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo17" type="Sprite2D" parent="."]
+position = Vector2(-1198, -842)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo18" type="Sprite2D" parent="."]
+position = Vector2(-951, -840)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
+[node name="Bamboo19" type="Sprite2D" parent="."]
+position = Vector2(-814, -838)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo20" type="Sprite2D" parent="."]
+position = Vector2(-687, -840)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
+[node name="Bamboo21" type="Sprite2D" parent="."]
+position = Vector2(-436, -837)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo22" type="Sprite2D" parent="."]
+position = Vector2(-560, -842)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo23" type="Sprite2D" parent="."]
+position = Vector2(-313, -840)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
+[node name="Bamboo24" type="Sprite2D" parent="."]
+position = Vector2(-176, -844)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo25" type="Sprite2D" parent="."]
+position = Vector2(-48.9998, -846)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
+[node name="Bamboo26" type="Sprite2D" parent="."]
+position = Vector2(202, -843)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo27" type="Sprite2D" parent="."]
+position = Vector2(78.0002, -848)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo28" type="Sprite2D" parent="."]
+position = Vector2(325, -846)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
+[node name="Bamboo29" type="Sprite2D" parent="."]
+position = Vector2(569, -837)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo30" type="Sprite2D" parent="."]
+position = Vector2(445, -842)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo31" type="Sprite2D" parent="."]
+position = Vector2(692, -840)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
+[node name="Bamboo32" type="Sprite2D" parent="."]
+position = Vector2(829, -844)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo33" type="Sprite2D" parent="."]
+position = Vector2(956, -846)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
+[node name="Bamboo34" type="Sprite2D" parent="."]
+position = Vector2(1207, -843)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo35" type="Sprite2D" parent="."]
+position = Vector2(1083, -848)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo36" type="Sprite2D" parent="."]
+position = Vector2(1330, -846)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+flip_h = true
+
+[node name="Bamboo37" type="Sprite2D" parent="."]
+position = Vector2(1410, -843)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo38" type="Sprite2D" parent="."]
+position = Vector2(1533, -846)
+rotation = -3.14159
 scale = Vector2(2, 2)
 texture = ExtResource("12_d0ved")
 flip_h = true
@@ -213,6 +382,18 @@ texture = ExtResource("12_d0ved")
 
 [node name="Bamboo14" type="Sprite2D" parent="."]
 position = Vector2(1518, -350)
+rotation = -1.58404
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo40" type="Sprite2D" parent="."]
+position = Vector2(1529, -39)
+rotation = -1.58404
+scale = Vector2(2, 2)
+texture = ExtResource("12_d0ved")
+
+[node name="Bamboo42" type="Sprite2D" parent="."]
+position = Vector2(1527, 341)
 rotation = -1.58404
 scale = Vector2(2, 2)
 texture = ExtResource("12_d0ved")

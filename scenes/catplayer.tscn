@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bdpficipe4et0"]
+[gd_scene load_steps=74 format=3 uid="uid://bdpficipe4et0"]
 
 [ext_resource type="Script" path="res://scripts/catplayer.gd" id="1_syx8v"]
 [ext_resource type="Shape2D" uid="uid://bcey015rbkb5m" path="res://scene_resources/catplayer_damage_area.tres" id="2_07co7"]
@@ -18,6 +18,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n5yq"]
 size = Vector2(48, 73.4476)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqkh2"]
+size = Vector2(24.2501, 80.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikkta"]
+size = Vector2(24.2501, 74.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_004eq"]
 atlas = ExtResource("9_eqrde")
@@ -471,12 +477,23 @@ collision_mask = 6
 position = Vector2(-55.5, 5.21316)
 shape = SubResource("RectangleShape2D_8n5yq")
 
+[node name="ColisionRightUp" type="CollisionShape2D" parent="Axis/PlayerDamager"]
+position = Vector2(-10.7501, 39.875)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_yqkh2")
+
+[node name="ColisionLeftUp" type="CollisionShape2D" parent="Axis/PlayerDamager"]
+position = Vector2(-7.2499, -39)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ikkta")
+
 [node name="SlashAnimation" type="AnimatedSprite2D" parent="Axis"]
 position = Vector2(-49.5, 1)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vwj0s")
 frame = 4
 frame_progress = 1.0
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -486,6 +503,7 @@ animation = &"win"
 autoplay = "idle"
 frame = 7
 frame_progress = 1.0
+metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_0dfev")
