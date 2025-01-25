@@ -5,7 +5,7 @@ class_name CatPlayer extends CharacterBody2D
 @onready var game: Node2D = $".."
 
 const SPEED = 900.0
-const JUMP_VELOCITY = -1600.0
+@export var JUMP_VELOCITY = -1600.0
 @onready var axis: Node2D = $Axis
 var platform_velocity : Vector2
 var attacking: bool = false
