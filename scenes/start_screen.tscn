@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://daj5bro3kt3ip"]
 
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_tdiea"]
-[ext_resource type="Texture2D" uid="uid://0mwq4jkcmpou" path="res://assets/First_scene.png" id="2_4j5ab"]
+[ext_resource type="Texture2D" uid="uid://81elerxbuuc1" path="res://assets/main_screen_final.png" id="2_kgavs"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -20,18 +20,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_4j5ab")
+texture = ExtResource("2_kgavs")
 
 [node name="Start" type="Button" parent="UI"]
+modulate = Color(0, 1, 0, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -91.5
-offset_top = 140.0
-offset_right = 91.5
-offset_bottom = 217.0
+offset_left = -104.5
+offset_top = 208.0
+offset_right = 104.5
+offset_bottom = 353.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.997868, 1.0017)
@@ -39,6 +40,7 @@ theme_override_font_sizes/font_size = 100
 text = "Play"
 
 [node name="Help" type="Button" parent="UI"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -54,21 +56,30 @@ scale = Vector2(0.997868, 1.0017)
 theme_override_font_sizes/font_size = 100
 text = "Help"
 
-[node name="Label" type="Label" parent="UI"]
-visible = false
+[node name="Panel" type="Panel" parent="UI"]
+offset_left = 365.0
+offset_top = 49.0
+offset_right = 1644.0
+offset_bottom = 170.0
+
+[node name="Label" type="Label" parent="UI/Panel"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -642.0
+offset_top = -121.5
+offset_right = 613.0
+offset_bottom = 129.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "Start Screen"
+theme_override_font_sizes/font_size = 80
+text = "Bubble Battle: Cornelius VS. Fifin"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [connection signal="button_up" from="UI/Start" to="." method="_on_start_game_button_up"]
 [connection signal="button_up" from="UI/Help" to="." method="_on_help_button_up"]

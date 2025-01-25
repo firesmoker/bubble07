@@ -22,6 +22,7 @@
 script = ExtResource("1_2p5m5")
 
 [node name="UI" parent="." instance=ExtResource("2_upbd2")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
