@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assats/background1.png" id="1_fk501"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="2_xt8os"]
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_2kjsh"]
-[ext_resource type="PackedScene" uid="uid://bxsc1wv1hhpak" path="res://scenes/spike.tscn" id="5_3v2pu"]
+[ext_resource type="PackedScene" uid="uid://304cx5i6sfno" path="res://scenes/damage_area.tscn" id="6_ev8uw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
 
@@ -46,6 +46,9 @@ theme_override_font_sizes/font_size = 200
 text = "GAME OVER"
 metadata/_edit_lock_ = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.366595, 0.366595, 0.366595, 1)
 position = Vector2(11, 357)
@@ -55,6 +58,10 @@ metadata/_edit_lock_ = true
 
 [node name="Catplayer" parent="." instance=ExtResource("1_4sxkf")]
 position = Vector2(-1226, -219)
+
+[node name="BubblePlayer" parent="." instance=ExtResource("4_2kjsh")]
+position = Vector2(475.168, -73.7118)
+scale = Vector2(2, 2)
 
 [node name="Ceiling" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
@@ -94,24 +101,6 @@ material = SubResource("CanvasItemMaterial_uj3f0")
 position = Vector2(1560, 444)
 scale = Vector2(3.47529, 0.684542)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
-
-[node name="BubblePlayer" parent="." instance=ExtResource("4_2kjsh")]
-position = Vector2(475.168, -73.7118)
-scale = Vector2(2, 2)
-
-[node name="Spike" parent="." instance=ExtResource("5_3v2pu")]
-position = Vector2(-1312, 823)
-
-[node name="Spike2" parent="." instance=ExtResource("5_3v2pu")]
-position = Vector2(-1312, 731)
-
-[node name="Spike3" parent="." instance=ExtResource("5_3v2pu")]
-position = Vector2(-1312, 639)
-
-[node name="Spike4" parent="." instance=ExtResource("5_3v2pu")]
-position = Vector2(-1312, 535)
-
-[node name="Spike5" parent="." instance=ExtResource("5_3v2pu")]
-position = Vector2(-1312, 535)
+[node name="DamageArea" parent="." instance=ExtResource("6_ev8uw")]
+position = Vector2(-1179, 424)
+scale = Vector2(23.65, 45.753)

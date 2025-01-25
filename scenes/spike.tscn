@@ -7,7 +7,7 @@
 size = Vector2(484, 134)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_re561"]
-size = Vector2(492.132, 140.6)
+size = Vector2(581.505, 148.2)
 
 [node name="Spike" type="StaticBody2D"]
 modulate = Color(1, 0.2, 0, 1)
