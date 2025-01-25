@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://jr7d1wady43a"]
+[gd_scene load_steps=44 format=3 uid="uid://jr7d1wady43a"]
 
 [ext_resource type="Script" path="res://scripts/bubble_player.gd" id="1_v6ibo"]
 [ext_resource type="PackedScene" uid="uid://cih1h4rsfonlq" path="res://scenes/bubble_projectile.tscn" id="3_fgdmr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bey7qdxtbftjq" path="res://assets/FishShoot-Sheet.png" id="5_6vppx"]
 [ext_resource type="Texture2D" uid="uid://cgydnwcaje4g5" path="res://assets/BigBubbleShoot-Sheet.png" id="5_dx2iv"]
 [ext_resource type="Texture2D" uid="uid://gmfg04dvweu5" path="res://assets/BigBubbleBurst-Sheet.png" id="7_b6f6o"]
+[ext_resource type="AudioStream" uid="uid://c14lcdrqvjsjk" path="res://audio/bubble-001.ogg" id="10_8kqhm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d743n"]
 radius = 40.05
@@ -294,3 +295,10 @@ sprite_frames = SubResource("SpriteFrames_daose")
 animation = &"death"
 frame = 4
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_8kqhm")
+
+[node name="FishAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_8kqhm")
+max_distance = 3500.0

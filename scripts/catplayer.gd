@@ -4,6 +4,12 @@ class_name CatPlayer extends CharacterBody2D
 @onready var slash_animation: AnimatedSprite2D = $Axis/SlashAnimation
 @onready var game: Node2D = $".."
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+var CAT_ATTACK_1: AudioStream = preload("res://audio/cat_attack2.ogg")
+var CAT_DEATH_1: AudioStream = preload("res://audio/cat_death1.ogg")
+var CAT_GETS_HIT_1: AudioStream = preload("res://audio/cat_gets_hit1.ogg")
+var CAT_JUMP_1: AudioStream = preload("res://audio/cat_jump1.ogg")
+
 
 const SPEED = 900.0
 @export var JUMP_VELOCITY = -1600.0
@@ -90,6 +96,8 @@ func _physics_process(delta: float) -> void:
 
 
 func attack() -> void:
+	audio_stream_player_2d.stream = CAT_ATTACK_1
+	audio_stream_player_2d.play()
 	if is_on_floor():
 		velocity.x = 0
 	attacking = true
@@ -111,6 +119,8 @@ func attack() -> void:
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
 
 func jump() -> void:
+	audio_stream_player_2d.stream = CAT_JUMP_1
+	audio_stream_player_2d.play()
 	jumping = true
 	print("jump")
 	velocity.y = JUMP_VELOCITY
@@ -123,6 +133,8 @@ func detach_from_ground(time: float = 1) -> void:
 
 func get_damage() -> void:
 	animated_sprite_2d.play("death")
+	audio_stream_player_2d.stream = CAT_DEATH_1
+	audio_stream_player_2d.play()
 	if not dying:
 		velocity.y += JUMP_VELOCITY
 		game.update_wins("bubble")
@@ -130,6 +142,11 @@ func get_damage() -> void:
 		await get_tree().create_timer(3).timeout
 		respawn()
 
+
+func get_pushed() -> void:
+	pushed = true
+	audio_stream_player_2d.stream = CAT_GETS_HIT_1
+	audio_stream_player_2d.play()
 
 func _on_slash_animation_animation_finished() -> void:
 	slash_animation.visible = false

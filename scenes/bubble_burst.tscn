@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://biulo5q3iuki6"]
+[gd_scene load_steps=11 format=3 uid="uid://biulo5q3iuki6"]
 
 [ext_resource type="Script" path="res://scenes/bubble_burst.gd" id="1_vuxgj"]
 [ext_resource type="Texture2D" uid="uid://gmfg04dvweu5" path="res://assets/BigBubbleBurst-Sheet.png" id="2_fhmos"]
+[ext_resource type="AudioStream" uid="uid://0ogtp84wq1xm" path="res://audio/bubble-002.ogg" id="3_1b4lj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdi5e"]
 radius = 92.4726
@@ -68,6 +69,11 @@ sprite_frames = SubResource("SpriteFrames_l0bsh")
 autoplay = "default"
 frame = 4
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1b4lj")
+volume_db = -8.0
+pitch_scale = 1.4
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -12,6 +12,11 @@ var dying: bool = false
 @onready var fish_sprite: AnimatedSprite2D = $FishSprite
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 var falling: bool = false
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+var BUBBLE_001: AudioStream = preload("res://audio/bubble-001.ogg")
+var BIG_BUBBLE_001: AudioStream = preload("res://audio/big_bubble1.ogg")
+var FISH_DEATH_1: AudioStream = preload("res://audio/fish_death1.ogg")
+@onready var fish_audio: AudioStreamPlayer2D = $FishAudio
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot_bubble"):
@@ -49,6 +54,8 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func create_projectile() -> void:
+	audio_stream_player_2d.stream = BUBBLE_001
+	audio_stream_player_2d.play()
 	var new_projectile := bubble_projectile.instantiate()
 	#print(bubble_spawn.global_position)
 	new_projectile.global_position = bubble_spawn.global_position
@@ -71,6 +78,8 @@ func seek_mouse() -> float:
 
 func get_damage() -> void:
 	if not dying:
+		fish_audio.stream = FISH_DEATH_1
+		fish_audio.play()
 		bubble_spawn.visible = false
 		falling = true
 		collision_shape_2d.disabled = true
