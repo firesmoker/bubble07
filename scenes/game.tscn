@@ -90,14 +90,19 @@ scale = Vector2(3.47529, 0.684542)
 [node name="Table" parent="." instance=ExtResource("7_waw1j")]
 
 [node name="Stool" parent="." instance=ExtResource("8_yd53u")]
-position = Vector2(976, 275)
+position = Vector2(976, 304)
+scale = Vector2(-0.284707, 1.30895)
+
+[node name="Stool2" parent="." instance=ExtResource("8_yd53u")]
+position = Vector2(-758, 803)
+scale = Vector2(-0.284707, 1.30895)
 
 [node name="DamageArea" parent="." instance=ExtResource("6_ev8uw")]
-position = Vector2(-1362, 682)
+position = Vector2(-1392, 683)
 scale = Vector2(18.7866, 14.9554)
 
 [node name="DamageArea5" parent="." instance=ExtResource("6_ev8uw")]
-position = Vector2(1520, -488)
+position = Vector2(1528, -488)
 scale = Vector2(6.1765, -23.0777)
 
 [node name="DamageArea6" parent="." instance=ExtResource("6_ev8uw")]
@@ -109,15 +114,15 @@ position = Vector2(1525, 344)
 scale = Vector2(6.1765, -7.3977)
 
 [node name="DamageArea2" parent="." instance=ExtResource("6_ev8uw")]
-position = Vector2(1196, 520)
-scale = Vector2(42.9866, 3.55538)
+position = Vector2(1196, 532)
+scale = Vector2(46.8556, 5.59538)
 
 [node name="DamageArea4" parent="." instance=ExtResource("6_ev8uw")]
 position = Vector2(-1250, -51)
 scale = Vector2(33.7866, 5.35538)
 
 [node name="DamageArea3" parent="." instance=ExtResource("6_ev8uw")]
-position = Vector2(16, -810)
+position = Vector2(16, -824)
 scale = Vector2(159.067, 3.27538)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("8_vlgm1")]
