@@ -45,6 +45,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		collision_shape_2d.disabled = true
 		velocity += get_gravity() * 2 * delta
+		fish_sprite.rotation += 0.5
 		move_and_slide()
 
 func create_projectile() -> void:
@@ -70,6 +71,7 @@ func seek_mouse() -> float:
 
 func get_damage() -> void:
 	if not dying:
+		bubble_spawn.visible = false
 		falling = true
 		collision_shape_2d.disabled = true
 		bubble_sprite.play("death")
@@ -84,9 +86,11 @@ func get_damage() -> void:
 
 func respawn() -> void:
 	if not game.game_over_state:
+		bubble_spawn.visible = true
 		collision_shape_2d.disabled = false
 		velocity = Vector2(0,0)
 		global_position = Vector2(0,0)
+		fish_sprite.rotation = 0
 		dying = false
 		falling = false
 		#collision_shape_2d.disabled = false
