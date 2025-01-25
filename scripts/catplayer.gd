@@ -13,7 +13,7 @@ var dying: bool = false
 var played_falling: bool = false
 var played_jumping: bool = false
 var jumping: bool = false
-
+var pushed: bool = false
 
 func _ready() -> void:
 	slash_animation.visible = false
@@ -59,33 +59,30 @@ func handle_movement_animations(direction: float) -> void:
 		animated_sprite_2d.flip_h = false
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * 2 * delta
-	else:
-		jumping = false
-		played_jumping = false
-		played_falling = false
-	# Handle jump.
-	
+	if not dying:
+		if not is_on_floor():
+			velocity += get_gravity() * 2 * delta
+		else:
+			pushed = false
+			jumping = false
+			played_jumping = false
+			played_falling = false
 		
-	if Input.is_action_just_pressed("attack"):
-		attack()
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump()
-	
-	if Input.is_action_just_released("jump") and not is_on_floor() and velocity.y < 0 and jumping:
-		velocity.y -= clamp(velocity.y, JUMP_VELOCITY, 0)
-	
-	var direction := Input.get_axis("left", "right")
-	
-	move(direction)
-	handle_movement_animations(direction)
-	#platform_velocity = get_platform_velocity()
-	#print(platform_velocity)
+			
+		if Input.is_action_just_pressed("attack"):
+			attack()
+		
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			jump()
+		
+		if Input.is_action_just_released("jump") and not is_on_floor() and velocity.y < 0 and jumping and not pushed:
+			velocity.y -= clamp(velocity.y, JUMP_VELOCITY, 0)
+		
+		var direction := Input.get_axis("left", "right")
+		
+		move(direction)
+		handle_movement_animations(direction)
+
 
 func attack() -> void:
 	if is_on_floor():
@@ -122,7 +119,6 @@ func get_damage() -> void:
 		game.update_wins("bubble")
 		dying = true
 		await get_tree().create_timer(3).timeout
-		#queue_free()
 		respawn()
 
 
