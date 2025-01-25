@@ -6,12 +6,14 @@ class_name Game extends Node2D
 @onready var bubble_wins_label: Label = $UI/BubbleWins
 @onready var game_over_label: Label = $UI/GameOver
 var game_over_state: bool = false
+@onready var button: Button = $UI/Button
 
 var num_wins_to_finish: int = 3
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	button.visible = false
 	game_over_label.visible = false
 
 
@@ -32,6 +34,7 @@ func update_wins(player: String) -> void:
 
 func game_over(player_who_won: String) -> void:
 	game_over_state = true
+	button.visible = true
 	if player_who_won.to_lower() == "cat":
 		game_over_label.text = "CAT WINS"
 		print("cat rocks")
@@ -39,3 +42,7 @@ func game_over(player_who_won: String) -> void:
 		game_over_label.text = "BUBBLE WINS"
 		print("bubbles are better")
 	game_over_label.visible = true
+
+
+func _on_button_button_up() -> void:
+	get_tree().reload_current_scene()

@@ -137,5 +137,6 @@ func _on_slash_animation_animation_finished() -> void:
 func respawn() -> void:
 	if not game.game_over_state:
 		global_position = Vector2(0,0)
+		velocity = Vector2(0,0)
 		dying = false
 		collision_shape_2d.disabled = false
