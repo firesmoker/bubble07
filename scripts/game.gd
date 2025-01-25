@@ -7,6 +7,7 @@ class_name Game extends Node2D
 @onready var game_over_label: Label = $UI/GameOver
 var game_over_state: bool = false
 @onready var button: Button = $UI/Button
+@onready var ui: CanvasLayer = $UI
 
 var num_wins_to_finish: int = 5
 
@@ -16,7 +17,7 @@ func _ready() -> void:
 	button.visible = false
 	button.connect("button_up",_on_button_button_up)
 	game_over_label.visible = false
-
+	ui.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

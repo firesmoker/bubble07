@@ -19,7 +19,7 @@ var FISH_DEATH_1: AudioStream = preload("res://audio/fish_death1.ogg")
 @onready var fish_audio: AudioStreamPlayer2D = $FishAudio
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot_bubble"):
+	if event.is_action_pressed("shoot_bubble") and not dying:
 		create_projectile()
 
 func _ready() -> void:
