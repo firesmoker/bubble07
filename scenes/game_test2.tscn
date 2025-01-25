@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://curt8g7fliikb"]
+[gd_scene load_steps=12 format=3 uid="uid://curt8g7fliikb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v18ey"]
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="2_6dq2v"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_r0nuq"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="5_f6urn"]
 [ext_resource type="PackedScene" path="res://scenes/damage_area.tscn" id="6_54cwn"]
+[ext_resource type="Texture2D" uid="uid://j4pjqnbv4vi3" path="res://assets/Katana.png" id="8_6uom3"]
+[ext_resource type="Texture2D" uid="uid://cw1tuuig1r44d" path="res://assets/Stool.png" id="9_uqny4"]
+[ext_resource type="Texture2D" uid="uid://c8jcx84l3cf8u" path="res://assets/Table.png" id="10_7ex8c"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
 
@@ -75,3 +78,19 @@ scale = Vector2(3.47529, 0.684542)
 position = Vector2(-1179, 424)
 scale = Vector2(23.65, 45.753)
 metadata/_edit_lock_ = true
+
+[node name="VisualObject" type="Sprite2D" parent="."]
+position = Vector2(-374, 440)
+rotation = 1.57079
+scale = Vector2(2, 2)
+texture = ExtResource("8_6uom3")
+
+[node name="VisualObject2" type="Sprite2D" parent="."]
+position = Vector2(153, 766)
+scale = Vector2(2, 2)
+texture = ExtResource("9_uqny4")
+
+[node name="VisualObject3" type="Sprite2D" parent="."]
+position = Vector2(-562, 807)
+scale = Vector2(2, 2)
+texture = ExtResource("10_7ex8c")

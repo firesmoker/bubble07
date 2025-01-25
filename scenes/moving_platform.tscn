@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwiq44674i3iy"]
 
-[ext_resource type="Texture2D" uid="uid://bedkpvcmq4xf8" path="res://assets/platform.png" id="2_g5pcl"]
+[ext_resource type="Texture2D" uid="uid://bnfoksij8dsem" path="res://assets/Moving Platform.png" id="2_2al1r"]
 [ext_resource type="Script" path="res://scripts/moving_platform.gd" id="2_k23ls"]
 [ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="3_rx47l"]
 
@@ -21,8 +21,8 @@ right_limit = null
 shape = SubResource("RectangleShape2D_ljpf0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3.73438, 0.999995)
-texture = ExtResource("2_g5pcl")
+scale = Vector2(4.2309, 4.33437)
+texture = ExtResource("2_2al1r")
 
 [node name="Area2D" type="Area2D" parent="."]
 process_mode = 4
