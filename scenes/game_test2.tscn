@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://broj6ikfo6vwo"]
+[gd_scene load_steps=9 format=3 uid="uid://curt8g7fliikb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v18ey"]
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="2_6dq2v"]
 [ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="3_je4ub"]
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_r0nuq"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="5_f6urn"]
-[ext_resource type="PackedScene" path="res://scenes/damage_area.tscn" id="6_54cwn"]
+[ext_resource type="PackedScene" uid="uid://304cx5i6sfno" path="res://scenes/damage_area.tscn" id="6_54cwn"]
 [ext_resource type="Texture2D" uid="uid://cex1kjpir4apm" path="res://assets/SharpBamboo.png" id="7_ym71c"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]

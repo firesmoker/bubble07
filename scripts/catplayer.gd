@@ -105,7 +105,7 @@ func attack() -> void:
 		animated_sprite_2d.play("attack")
 	else:
 		animated_sprite_2d.play("attack_in_air")
-	var ready_timer: SceneTreeTimer = get_tree().create_timer(0.55)
+	var ready_timer: SceneTreeTimer = get_tree().create_timer(0.3)
 	await ready_timer.timeout
 	var timer: SceneTreeTimer = get_tree().create_timer(0.3)
 	slash_animation.visible = true
