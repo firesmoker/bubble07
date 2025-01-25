@@ -4,17 +4,19 @@ extends AnimatableBody2D
 #var velocity: Vector2 = Vector2(0,0)
 @export var speed: float = 200.0
 # Left and right boundaries
-@export var left_limit: float = 0.0
+@export var left_limit: float = -400
 @export var right_limit: float = 400.0
 
 # Direction of movement: 1 for right, -1 for left
-var direction: int = 1
+@export var direction: int = 1
 var previous_position:Vector2 = Vector2.ZERO 
 
 # Area2D to detect overlapping bodies
 @onready var detector: Area2D = $Area2D
 
 func _ready() -> void:
+	left_limit = position.x + left_limit
+	right_limit = position.x + right_limit
 	previous_position = position
 	
 func _physics_process(delta: float) -> void:

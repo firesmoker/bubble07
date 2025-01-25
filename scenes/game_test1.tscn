@@ -50,5 +50,5 @@ position = Vector2(-321, 91)
 position = Vector2(-307, 26)
 scale = Vector2(0.19078, 0.326316)
 speed = 200.0
-left_limit = 0.0
+left_limit = -400.0
 right_limit = 400.0
