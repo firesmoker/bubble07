@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_2p5m5"]
 [ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="1_4sxkf"]
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="1_fk501"]
-[ext_resource type="PackedScene" uid="uid://bkndgvb2pbpmx" path="res://scenes/ui.tscn" id="2_upbd2"]
+[ext_resource type="PackedScene" uid="uid://d0huwtpqnt1f1" path="res://scenes/ui.tscn" id="2_upbd2"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="2_xt8os"]
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_2kjsh"]
 [ext_resource type="PackedScene" uid="uid://bowt8ve3wiejk" path="res://scenes/damage_area.tscn" id="6_ev8uw"]
-[ext_resource type="PackedScene" uid="uid://brsffbvun7ts7" path="res://scenes/table.tscn" id="7_waw1j"]
+[ext_resource type="PackedScene" uid="uid://byiw0ian74ces" path="res://scenes/table.tscn" id="7_waw1j"]
 [ext_resource type="PackedScene" uid="uid://bwiq44674i3iy" path="res://scenes/moving_platform.tscn" id="8_vlgm1"]
-[ext_resource type="PackedScene" uid="uid://bb33heik8pj7" path="res://scenes/stool.tscn" id="8_yd53u"]
+[ext_resource type="PackedScene" uid="uid://dlc4bcqaqxovg" path="res://scenes/stool.tscn" id="8_yd53u"]
 [ext_resource type="Texture2D" uid="uid://j4pjqnbv4vi3" path="res://assets/Katana.png" id="11_xly51"]
 [ext_resource type="Texture2D" uid="uid://cex1kjpir4apm" path="res://assets/SharpBamboo.png" id="12_d0ved"]
-[ext_resource type="PackedScene" path="res://scenes/drawer.tscn" id="12_lt72g"]
+[ext_resource type="PackedScene" uid="uid://d3rakq8qrkyr1" path="res://scenes/drawer.tscn" id="12_lt72g"]
 [ext_resource type="Texture2D" uid="uid://io6t1tmvx4kh" path="res://assets/KatanaAddon.png" id="12_vems5"]
 [ext_resource type="Texture2D" uid="uid://diccyc3pq1io6" path="res://assets/KatanaSideways.png" id="13_s88gi"]
 
@@ -22,7 +22,6 @@
 script = ExtResource("1_2p5m5")
 
 [node name="UI" parent="." instance=ExtResource("2_upbd2")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)

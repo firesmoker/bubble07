@@ -18,9 +18,9 @@ text = "0"
 
 [node name="BubbleWins" type="Label" parent="."]
 z_index = 50
-offset_left = 1698.0
+offset_left = 1642.0
 offset_top = -4.0
-offset_right = 1729.0
+offset_right = 1673.0
 offset_bottom = 65.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -62,9 +62,17 @@ theme_override_font_sizes/font_size = 50
 text = "Restart"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 1778.0
+offset_left = 1722.0
 offset_top = 9.0
-offset_right = 1818.0
+offset_right = 1762.0
+offset_bottom = 49.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_gaqp8")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 1722.0
+offset_top = 9.0
+offset_right = 1762.0
 offset_bottom = 49.0
 scale = Vector2(3, 3)
 texture = ExtResource("1_gaqp8")

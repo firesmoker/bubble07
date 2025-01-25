@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ncbvum04cvdu"]
 
 [ext_resource type="Texture2D" uid="uid://c3eylo50g5s0k" path="res://assets/WoodenWallStretchable.png" id="1_2wb0s"]
-[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="2_bbh27"]
+[ext_resource type="PackedScene" path="res://scenes/damager.tscn" id="2_bbh27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpf0"]
 size = Vector2(484, 140.042)
