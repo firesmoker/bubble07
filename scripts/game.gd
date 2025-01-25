@@ -9,7 +9,7 @@ static var game_over_state: bool = false
 @onready var button: Button = $UI/Button
 @onready var ui: CanvasLayer = $UI
 
-var num_wins_to_finish: int = 1
+var num_wins_to_finish: int = 5
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,19 +29,21 @@ func _process(delta: float) -> void:
 func update_wins(player: String) -> void:
 	if player.to_lower() == "cat":
 		cat_wins += 1
-		cat_wins_label.text = "Cat Wins: " + str(cat_wins)
+		#cat_wins_label.text = "Cat Wins: " + str(cat_wins)
+		cat_wins_label.text = str(cat_wins)
 	else:
 		bubble_wins += 1
-		bubble_wins_label.text = "Bubble Wins: " + str(bubble_wins)
+		#bubble_wins_label.text = "Bubble Wins: " + str(bubble_wins)
+		bubble_wins_label.text = str(bubble_wins)
 
 func game_over(player_who_won: String) -> void:
 	game_over_state = true
 	button.visible = true
 	if player_who_won.to_lower() == "cat":
-		game_over_label.text = "CAT WINS"
+		game_over_label.text = "FIFIN WINS"
 		print("cat rocks")
 	else:
-		game_over_label.text = "BUBBLE WINS"
+		game_over_label.text = "CORNELIUS WINS"
 		print("bubbles are better")
 	game_over_label.visible = true
 

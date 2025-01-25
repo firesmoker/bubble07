@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwiq44674i3iy"]
+[gd_scene load_steps=7 format=3 uid="uid://bwiq44674i3iy"]
 
 [ext_resource type="Texture2D" uid="uid://bnfoksij8dsem" path="res://assets/Moving Platform.png" id="2_2al1r"]
 [ext_resource type="Script" path="res://scripts/moving_platform.gd" id="2_k23ls"]
@@ -8,6 +8,9 @@
 size = Vector2(2103.17, 285)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkb2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akfkg"]
+size = Vector2(2140.31, 315.4)
 
 [node name="MovingPlatform" type="AnimatableBody2D"]
 position = Vector2(0, 35)
@@ -33,8 +36,7 @@ shape = SubResource("RectangleShape2D_fkb2d")
 metadata/_edit_lock_ = true
 
 [node name="Damager" parent="." instance=ExtResource("3_rx47l")]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damager"]
-shape = SubResource("RectangleShape2D_ljpf0")
+shape = SubResource("RectangleShape2D_akfkg")
 debug_color = Color(0.894586, 0.255554, 0.494507, 0.42)
