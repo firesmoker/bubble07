@@ -42,8 +42,10 @@ func _physics_process(delta: float) -> void:
 	if not dying:
 		move()
 		handle_animations()
-	elif falling:
-		fall()
+	else:
+		collision_shape_2d.disabled = true
+		velocity += get_gravity() * 2 * delta
+		move_and_slide()
 
 func create_projectile() -> void:
 	var new_projectile := bubble_projectile.instantiate()
@@ -78,14 +80,13 @@ func get_damage() -> void:
 		await get_tree().create_timer(3).timeout
 		#queue_free()
 		respawn()
+	
 
 func respawn() -> void:
 	if not game.game_over_state:
+		collision_shape_2d.disabled = false
+		velocity = Vector2(0,0)
 		global_position = Vector2(0,0)
 		dying = false
 		falling = false
 		#collision_shape_2d.disabled = false
-
-func fall() -> void:
-	velocity.y = 500
-	move_and_slide()

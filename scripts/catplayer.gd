@@ -3,6 +3,7 @@ class_name CatPlayer extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var slash_animation: AnimatedSprite2D = $Axis/SlashAnimation
 @onready var game: Node2D = $".."
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 const SPEED = 900.0
 @export var JUMP_VELOCITY = -1600.0
@@ -82,6 +83,10 @@ func _physics_process(delta: float) -> void:
 		
 		move(direction)
 		handle_movement_animations(direction)
+	else:
+		collision_shape_2d.disabled = true
+		velocity += get_gravity() * 2 * delta
+		move_and_slide()
 
 
 func attack() -> void:
@@ -116,6 +121,7 @@ func detach_from_ground(time: float = 1) -> void:
 func get_damage() -> void:
 	animated_sprite_2d.play("death")
 	if not dying:
+		velocity.y += JUMP_VELOCITY
 		game.update_wins("bubble")
 		dying = true
 		await get_tree().create_timer(3).timeout
@@ -129,3 +135,4 @@ func respawn() -> void:
 	if not game.game_over_state:
 		global_position = Vector2(0,0)
 		dying = false
+		collision_shape_2d.disabled = false
