@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="1_fk501"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="2_xt8os"]
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_2kjsh"]
-[ext_resource type="PackedScene" uid="uid://304cx5i6sfno" path="res://scenes/damage_area.tscn" id="6_ev8uw"]
+[ext_resource type="PackedScene" path="res://scenes/damage_area.tscn" id="6_ev8uw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
 
@@ -50,11 +50,9 @@ metadata/_edit_lock_ = true
 zoom = Vector2(0.6, 0.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.366595, 0.366595, 0.366595, 1)
-position = Vector2(11, 357)
-scale = Vector2(3.20557, 3.20557)
+position = Vector2(7, -480)
+scale = Vector2(3.20556, 3.20556)
 texture = ExtResource("1_fk501")
-metadata/_edit_lock_ = true
 
 [node name="Catplayer" parent="." instance=ExtResource("1_4sxkf")]
 position = Vector2(-1226, -219)
@@ -66,26 +64,26 @@ scale = Vector2(2, 2)
 [node name="Ceiling" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
-position = Vector2(-22, -860)
+position = Vector2(-22, -879)
 scale = Vector2(6.84342, 0.570187)
 
 [node name="Floor" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
-position = Vector2(-149, 920)
+position = Vector2(-19, 934)
 scale = Vector2(6.84342, 0.570187)
 
 [node name="Platform7" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
-position = Vector2(-1444, -369)
+position = Vector2(-1612, -369)
 rotation = 1.5746
 scale = Vector2(6.84342, 0.570187)
 
 [node name="Platform8" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
-position = Vector2(1438, -368)
+position = Vector2(1624, -368)
 rotation = 1.5746
 scale = Vector2(6.84342, 0.570187)
 
@@ -101,6 +99,16 @@ material = SubResource("CanvasItemMaterial_uj3f0")
 position = Vector2(1560, 444)
 scale = Vector2(3.47529, 0.684542)
 
+[node name="Platform5" parent="." instance=ExtResource("2_xt8os")]
+modulate = Color(0.554367, 0.339573, 0.29896, 1)
+material = SubResource("CanvasItemMaterial_uj3f0")
+position = Vector2(5.99988, 842)
+scale = Vector2(1.23529, 0.684542)
+
 [node name="DamageArea" parent="." instance=ExtResource("6_ev8uw")]
-position = Vector2(-1179, 424)
-scale = Vector2(23.65, 45.753)
+position = Vector2(-1362, 682)
+scale = Vector2(21.1866, 19.7554)
+
+[node name="DamageArea2" parent="." instance=ExtResource("6_ev8uw")]
+position = Vector2(1148, 560)
+scale = Vector2(42.9866, 5.71538)
