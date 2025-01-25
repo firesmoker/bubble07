@@ -16,20 +16,17 @@ script = ExtResource("1_2p5m5")
 
 [node name="CatWins" type="Label" parent="UI"]
 z_index = 50
-offset_left = 45.38
-offset_top = 86.46
-offset_right = 311.38
-offset_bottom = 155.46
+offset_right = 266.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Cat Wins: 0"
 
 [node name="BubbleWins" type="Label" parent="UI"]
 z_index = 50
-offset_left = 45.38
-offset_top = 154.97
-offset_right = 400.38
-offset_bottom = 223.97
+offset_top = 82.0
+offset_right = 355.0
+offset_bottom = 151.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Bubble Wins: 0"
@@ -52,21 +49,6 @@ theme_override_font_sizes/font_size = 200
 text = "GAME OVER"
 metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="UI"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -126.5
-offset_top = -324.0
-offset_right = 126.5
-offset_bottom = -220.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 70
-text = "Restart"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
 
@@ -74,13 +56,13 @@ zoom = Vector2(0.6, 0.6)
 position = Vector2(7, -480)
 scale = Vector2(3.20556, 3.20556)
 texture = ExtResource("1_fk501")
-metadata/_edit_lock_ = true
 
 [node name="Catplayer" parent="." instance=ExtResource("1_4sxkf")]
 position = Vector2(-1226, -286)
 JUMP_VELOCITY = -1300.0
 
 [node name="BubblePlayer" parent="." instance=ExtResource("4_2kjsh")]
+z_index = 0
 position = Vector2(475.168, -73.7118)
 scale = Vector2(2, 2)
 
@@ -179,5 +161,3 @@ scale = Vector2(33.7866, 3.55538)
 [node name="DamageArea3" parent="." instance=ExtResource("6_ev8uw")]
 position = Vector2(16, -810)
 scale = Vector2(159.067, 3.27538)
-
-[connection signal="button_up" from="UI/Button" to="." method="_on_button_button_up"]

@@ -13,6 +13,7 @@ scale = Vector2(98.9062, 98.9062)
 texture = ExtResource("2_q0yqh")
 
 [node name="BubblePlayer" parent="." instance=ExtResource("1_21pg1")]
+z_index = 0
 position = Vector2(300, 0)
 scale = Vector2(2, 2)
 
