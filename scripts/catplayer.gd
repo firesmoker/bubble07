@@ -21,23 +21,24 @@ func _ready() -> void:
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
 
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * 2 * delta
-	else:
-		played_jumping = false
-		played_falling = false
-	# Handle jump.
+func move(direction: float) -> void:
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump()
-		
-	if Input.is_action_just_pressed("attack"):
-		attack()
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("left", "right")
+	if direction and not attacking:
+		velocity.x = direction * SPEED
+	elif not attacking:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if velocity.x > 0 and direction:
+		axis.rotation = deg_to_rad(180)
+	elif velocity.x == 0:
+		pass
+	elif direction:
+		axis.rotation = 0
+	
+	velocity += platform_velocity
+	move_and_slide()
+
+func handle_movement_animations(direction: float) -> void:
 	if not is_on_floor():
 		if velocity.y > 0 and not played_jumping and not attacking:
 			animated_sprite_2d.play("jump_down")
@@ -47,24 +48,40 @@ func _physics_process(delta: float) -> void:
 			played_falling = true
 	elif direction and not attacking:
 		animated_sprite_2d.play("run")
-		velocity.x = direction * SPEED
 	elif not attacking and is_on_floor():
 		animated_sprite_2d.play("idle")
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if velocity.x > 0 and direction:
-		axis.rotation = deg_to_rad(180)
 		animated_sprite_2d.flip_h = true
 	elif velocity.x == 0:
 		pass
 	elif direction:
-		axis.rotation = 0
 		animated_sprite_2d.flip_h = false
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * 2 * delta
+	else:
+		played_jumping = false
+		played_falling = false
+	# Handle jump.
 	
-	velocity += platform_velocity
-	move_and_slide()
-	platform_velocity = get_platform_velocity()
-	print(platform_velocity)
+		
+	if Input.is_action_just_pressed("attack"):
+		attack()
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		jump()
+		
+	var direction := Input.get_axis("left", "right")
+	
+	move(direction)
+	handle_movement_animations(direction)
+	#platform_velocity = get_platform_velocity()
+	#print(platform_velocity)
 
 func attack() -> void:
 	if is_on_floor():
