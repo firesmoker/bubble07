@@ -94,7 +94,7 @@ position = Vector2(976, 304)
 scale = Vector2(-0.284707, 1.30895)
 
 [node name="Stool2" parent="." instance=ExtResource("8_yd53u")]
-position = Vector2(-758, 803)
+position = Vector2(-764, 803)
 scale = Vector2(-0.284707, 1.30895)
 
 [node name="DamageArea" parent="." instance=ExtResource("6_ev8uw")]
