@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://curt8g7fliikb"]
+[gd_scene load_steps=10 format=3 uid="uid://curt8g7fliikb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v18ey"]
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="2_6dq2v"]
+[ext_resource type="PackedScene" uid="uid://d0huwtpqnt1f1" path="res://scenes/ui.tscn" id="2_d3vde"]
 [ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="3_je4ub"]
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_r0nuq"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="5_f6urn"]
@@ -13,43 +14,7 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v18ey")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="CatWins" type="Label" parent="UI"]
-z_index = 50
-offset_left = -1.0
-offset_right = 266.0
-offset_bottom = 69.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "Cat Wins: 0"
-
-[node name="BubbleWins" type="Label" parent="UI"]
-z_index = 50
-offset_top = 82.0
-offset_right = 355.0
-offset_bottom = 151.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "Bubble Wins: 0"
-
-[node name="GameOver" type="Label" parent="UI"]
-z_index = 50
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -573.5
-offset_top = -136.5
-offset_right = 573.5
-offset_bottom = 136.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 200
-text = "GAME OVER"
-metadata/_edit_lock_ = true
+[node name="UI" parent="." instance=ExtResource("2_d3vde")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)

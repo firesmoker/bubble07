@@ -8,12 +8,13 @@ class_name Game extends Node2D
 var game_over_state: bool = false
 @onready var button: Button = $UI/Button
 
-var num_wins_to_finish: int = 3
+var num_wins_to_finish: int = 5
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#button.visible = false
+	button.visible = false
+	button.connect("button_up",_on_button_button_up)
 	game_over_label.visible = false
 
 
@@ -34,7 +35,7 @@ func update_wins(player: String) -> void:
 
 func game_over(player_who_won: String) -> void:
 	game_over_state = true
-	#button.visible = true
+	button.visible = true
 	if player_who_won.to_lower() == "cat":
 		game_over_label.text = "CAT WINS"
 		print("cat rocks")

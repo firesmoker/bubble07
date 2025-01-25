@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chd0y341l2hnt"]
+
+[ext_resource type="AudioStream" uid="uid://cdv8m450sxg4w" path="res://audio/music_funny-bgm-240795.ogg" id="1_l4m82"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_l4m82")
+volume_db = -18.333
+autoplay = true
