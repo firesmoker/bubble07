@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://brsffbvun7ts7"]
+
+[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="1_utswa"]
+[ext_resource type="Texture2D" uid="uid://c8jcx84l3cf8u" path="res://assets/Table.png" id="2_cdpav"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf3y1"]
+size = Vector2(501.907, 204.516)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re561"]
+size = Vector2(492.132, 140.6)
+
+[node name="Table" type="StaticBody2D"]
+modulate = Color(0.554367, 0.339573, 0.29896, 1)
+material = SubResource("CanvasItemMaterial_uj3f0")
+position = Vector2(5.99988, 842)
+scale = Vector2(1.23529, 0.684542)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8.76501)
+shape = SubResource("RectangleShape2D_pf3y1")
+
+[node name="Damager" parent="." instance=ExtResource("1_utswa")]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damager"]
+shape = SubResource("RectangleShape2D_re561")
+debug_color = Color(0.894586, 0.255554, 0.494507, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="Table2" type="Sprite2D" parent="."]
+scale = Vector2(1.61905, 2.92166)
+texture = ExtResource("2_cdpav")
+metadata/_edit_lock_ = true

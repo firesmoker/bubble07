@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb33heik8pj7"]
+
+[ext_resource type="Texture2D" uid="uid://cw1tuuig1r44d" path="res://assets/Stool.png" id="1_42ypi"]
+[ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="2_inxms"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvytr"]
+size = Vector2(871.933, 145.52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re561"]
+size = Vector2(492.132, 140.6)
+
+[node name="Stool" type="StaticBody2D"]
+modulate = Color(0.554367, 0.339573, 0.29896, 1)
+material = SubResource("CanvasItemMaterial_uj3f0")
+position = Vector2(-935, 773)
+scale = Vector2(-0.364707, 1.67675)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uvytr")
+metadata/_edit_lock_ = true
+
+[node name="Stool2" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(5.48385, -1.19278)
+texture = ExtResource("1_42ypi")
+metadata/_edit_lock_ = true
+
+[node name="Damager" parent="." instance=ExtResource("2_inxms")]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damager"]
+shape = SubResource("RectangleShape2D_re561")
+debug_color = Color(0.894586, 0.255554, 0.494507, 0.42)
+metadata/_edit_lock_ = true
