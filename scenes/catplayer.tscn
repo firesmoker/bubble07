@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bdpficipe4et0"]
+[gd_scene load_steps=62 format=3 uid="uid://bdpficipe4et0"]
 
 [ext_resource type="Script" path="res://scripts/catplayer.gd" id="1_syx8v"]
 [ext_resource type="Shape2D" uid="uid://bcey015rbkb5m" path="res://scene_resources/catplayer_damage_area.tres" id="2_07co7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c0jxnbhm345a2" path="res://assets/CatRun-Sheet.png" id="4_mjrp2"]
 [ext_resource type="Texture2D" uid="uid://c11wurlcs22t5" path="res://assets/CatAttack-Sheet.png" id="6_2c2ot"]
 [ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="6_ic3h7"]
+[ext_resource type="Texture2D" uid="uid://8lu4y87lbv2r" path="res://assets/CatAttackMidair-Sheet.png" id="8_0ckwc"]
 [ext_resource type="Texture2D" uid="uid://c06fq0mau56pd" path="res://assets/CatDeath-Sheet.png" id="8_gja7d"]
 [ext_resource type="Texture2D" uid="uid://ox6odcak0ali" path="res://assets/CatFallDown-Sheet.png" id="9_14ivv"]
 [ext_resource type="Texture2D" uid="uid://ckewbccqo5rno" path="res://assets/CatJumpUp-Sheet.png" id="9_47wsw"]
@@ -97,6 +98,46 @@ region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wvt8"]
 atlas = ExtResource("6_2c2ot")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0l1y"]
+atlas = ExtResource("8_0ckwc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om5wg"]
+atlas = ExtResource("8_0ckwc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hi2n"]
+atlas = ExtResource("8_0ckwc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_701n4"]
+atlas = ExtResource("8_0ckwc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0eg5"]
+atlas = ExtResource("8_0ckwc")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri22a"]
+atlas = ExtResource("8_0ckwc")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqpk"]
+atlas = ExtResource("8_0ckwc")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlj2n"]
+atlas = ExtResource("8_0ckwc")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1knw"]
+atlas = ExtResource("8_0ckwc")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7slg"]
+atlas = ExtResource("8_0ckwc")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwxc6"]
@@ -214,6 +255,41 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0l1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om5wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hi2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_701n4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0eg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri22a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcqpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlj2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1knw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7slg")
+}],
+"loop": true,
+"name": &"attack_in_air",
 "speed": 12.0
 }, {
 "frames": [{
@@ -339,11 +415,11 @@ frame = 4
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 scale = Vector2(1.98298, 1.9456)
 sprite_frames = SubResource("SpriteFrames_p07ug")
-animation = &"death"
+animation = &"attack_in_air"
 autoplay = "idle"
-frame_progress = 0.124374
 
 [connection signal="body_entered" from="BubbleDamager" to="BubbleDamager" method="_on_body_entered"]
 [connection signal="animation_finished" from="Axis/SlashAnimation" to="." method="_on_slash_animation_animation_finished"]

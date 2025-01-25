@@ -93,7 +93,10 @@ func attack() -> void:
 	if is_on_floor():
 		velocity.x = 0
 	attacking = true
-	animated_sprite_2d.play("attack")
+	if is_on_floor():
+		animated_sprite_2d.play("attack")
+	else:
+		animated_sprite_2d.play("attack_in_air")
 	var ready_timer: SceneTreeTimer = get_tree().create_timer(0.55)
 	await ready_timer.timeout
 	var timer: SceneTreeTimer = get_tree().create_timer(0.3)
