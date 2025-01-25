@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="2_bbh27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpf0"]
-size = Vector2(484, 134)
+size = Vector2(484, 140.042)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_re561"]
 size = Vector2(492.132, 140.6)

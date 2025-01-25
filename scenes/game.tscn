@@ -102,6 +102,10 @@ scale = Vector2(-0.444705, 2.04454)
 position = Vector2(-1362, 682)
 scale = Vector2(21.1866, 19.7554)
 
+[node name="DamageArea5" parent="." instance=ExtResource("6_ev8uw")]
+position = Vector2(1519, -389)
+scale = Vector2(4.0165, -19.2777)
+
 [node name="DamageArea2" parent="." instance=ExtResource("6_ev8uw")]
 position = Vector2(1148, 520)
 scale = Vector2(42.9866, 3.55538)
@@ -127,7 +131,6 @@ position = Vector2(-301, 310)
 scale = Vector2(0.19078, 0.326316)
 
 [node name="Katana" type="Sprite2D" parent="."]
-position = Vector2(-1260, 308)
-rotation = 1.57079
+position = Vector2(1515, -395)
 scale = Vector2(2, 2)
 texture = ExtResource("11_xly51")
