@@ -18,6 +18,7 @@ script = ExtResource("1_2p5m5")
 z_index = 50
 offset_right = 266.0
 offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Cat Wins: 0"
 
@@ -26,6 +27,7 @@ z_index = 50
 offset_top = 82.0
 offset_right = 355.0
 offset_bottom = 151.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Bubble Wins: 0"
 
@@ -42,6 +44,7 @@ offset_right = 573.5
 offset_bottom = 136.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 200
 text = "GAME OVER"
 metadata/_edit_lock_ = true
@@ -123,5 +126,9 @@ position = Vector2(-1362, 682)
 scale = Vector2(21.1866, 19.7554)
 
 [node name="DamageArea2" parent="." instance=ExtResource("6_ev8uw")]
-position = Vector2(1148, 560)
-scale = Vector2(42.9866, 5.71538)
+position = Vector2(1148, 520)
+scale = Vector2(42.9866, 3.55538)
+
+[node name="DamageArea3" parent="." instance=ExtResource("6_ev8uw")]
+position = Vector2(16, -810)
+scale = Vector2(159.067, 3.27538)
