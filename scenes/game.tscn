@@ -49,7 +49,7 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(7, -480)
 scale = Vector2(3.20556, 3.20556)
 texture = ExtResource("1_fk501")
