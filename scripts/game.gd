@@ -8,12 +8,17 @@ class_name Game extends Node2D
 static var game_over_state: bool = false
 @onready var button: Button = $UI/Button
 @onready var ui: CanvasLayer = $UI
-
-var num_wins_to_finish: int = 5
+@onready var audio: AudioStreamPlayer = $Audio
+var CORNELIUS_WINS_1: AudioStream = preload("res://audio/cornelius_wins1.ogg")
+var FIFIN_WINS_1: AudioStream = preload("res://audio/fifin_wins1.ogg")
+var START_SOUND_1: AudioStream = preload("res://audio/start_sound1.ogg")
+var num_wins_to_finish: int = 1
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	audio.stream = START_SOUND_1
+	audio.play()
 	button.visible = false
 	button.connect("button_up",_on_button_button_up)
 	game_over_label.visible = false
@@ -21,9 +26,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if cat_wins >= num_wins_to_finish:
+	if cat_wins >= num_wins_to_finish and not game_over_state:
 		game_over("cat")
-	elif bubble_wins >= num_wins_to_finish:
+	elif bubble_wins >= num_wins_to_finish  and not game_over_state:
 		game_over("bubble")
 
 func update_wins(player: String) -> void:
@@ -40,9 +45,13 @@ func game_over(player_who_won: String) -> void:
 	game_over_state = true
 	button.visible = true
 	if player_who_won.to_lower() == "cat":
+		audio.stream = FIFIN_WINS_1
+		audio.play()
 		game_over_label.text = "FIFIN WINS"
 		print("cat rocks")
 	else:
+		audio.stream = CORNELIUS_WINS_1
+		audio.play()
 		game_over_label.text = "CORNELIUS WINS"
 		print("bubbles are better")
 	game_over_label.visible = true

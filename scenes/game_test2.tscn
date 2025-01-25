@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://curt8g7fliikb"]
+[gd_scene load_steps=15 format=3 uid="uid://curt8g7fliikb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v18ey"]
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="2_6dq2v"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://j4pjqnbv4vi3" path="res://assets/Katana.png" id="8_6uom3"]
 [ext_resource type="Texture2D" uid="uid://cw1tuuig1r44d" path="res://assets/Stool.png" id="9_uqny4"]
 [ext_resource type="Texture2D" uid="uid://c8jcx84l3cf8u" path="res://assets/Table.png" id="10_7ex8c"]
+[ext_resource type="Texture2D" uid="uid://cex1kjpir4apm" path="res://assets/SharpBamboo.png" id="11_wybbf"]
+[ext_resource type="Texture2D" uid="uid://diccyc3pq1io6" path="res://assets/KatanaSideways.png" id="12_xawl3"]
+[ext_resource type="Texture2D" uid="uid://io6t1tmvx4kh" path="res://assets/KatanaAddon.png" id="13_ccoyc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
 
@@ -94,3 +97,17 @@ texture = ExtResource("9_uqny4")
 position = Vector2(-562, 807)
 scale = Vector2(2, 2)
 texture = ExtResource("10_7ex8c")
+
+[node name="Bamboo" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("11_wybbf")
+
+[node name="KatanaBase" type="Sprite2D" parent="."]
+position = Vector2(-404, 34)
+scale = Vector2(2, 2)
+texture = ExtResource("12_xawl3")
+
+[node name="KatanaBase2" type="Sprite2D" parent="."]
+position = Vector2(0, 171)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ccoyc")
