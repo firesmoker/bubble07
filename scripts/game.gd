@@ -5,11 +5,11 @@ class_name Game extends Node2D
 @onready var cat_wins_label: Label = $UI/CatWins
 @onready var bubble_wins_label: Label = $UI/BubbleWins
 @onready var game_over_label: Label = $UI/GameOver
-var game_over_state: bool = false
+static var game_over_state: bool = false
 @onready var button: Button = $UI/Button
 @onready var ui: CanvasLayer = $UI
 
-var num_wins_to_finish: int = 5
+var num_wins_to_finish: int = 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -47,4 +47,5 @@ func game_over(player_who_won: String) -> void:
 
 
 func _on_button_button_up() -> void:
+	game_over_state = false
 	get_tree().reload_current_scene()

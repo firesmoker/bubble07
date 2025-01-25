@@ -9,7 +9,7 @@ var CAT_ATTACK_1: AudioStream = preload("res://audio/cat_attack2.ogg")
 var CAT_DEATH_1: AudioStream = preload("res://audio/cat_death1.ogg")
 var CAT_GETS_HIT_1: AudioStream = preload("res://audio/cat_gets_hit1.ogg")
 var CAT_JUMP_1: AudioStream = preload("res://audio/cat_jump1.ogg")
-
+var played_win_animation: bool = false
 
 const SPEED = 900.0
 @export var JUMP_VELOCITY = -1600.0
@@ -88,7 +88,12 @@ func _physics_process(delta: float) -> void:
 		var direction := Input.get_axis("left", "right")
 		
 		move(direction)
-		handle_movement_animations(direction)
+		if not dying and Game.game_over_state:
+			if not played_win_animation:
+				animated_sprite_2d.play("win")
+				played_win_animation = true
+		else:
+			handle_movement_animations(direction)
 	else:
 		collision_shape_2d.disabled = true
 		velocity += get_gravity() * 2 * delta

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://jr7d1wady43a"]
+[gd_scene load_steps=53 format=3 uid="uid://jr7d1wady43a"]
 
 [ext_resource type="Script" path="res://scripts/bubble_player.gd" id="1_v6ibo"]
 [ext_resource type="PackedScene" uid="uid://cih1h4rsfonlq" path="res://scenes/bubble_projectile.tscn" id="3_fgdmr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bey7qdxtbftjq" path="res://assets/FishShoot-Sheet.png" id="5_6vppx"]
 [ext_resource type="Texture2D" uid="uid://cgydnwcaje4g5" path="res://assets/BigBubbleShoot-Sheet.png" id="5_dx2iv"]
 [ext_resource type="Texture2D" uid="uid://gmfg04dvweu5" path="res://assets/BigBubbleBurst-Sheet.png" id="7_b6f6o"]
+[ext_resource type="Texture2D" uid="uid://dmnua7rhyjhvk" path="res://assets/FishWin-Sheet.png" id="10_1axi1"]
 [ext_resource type="AudioStream" uid="uid://c14lcdrqvjsjk" path="res://audio/bubble-001.ogg" id="10_8kqhm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d743n"]
@@ -191,6 +192,38 @@ region = Rect2(352, 0, 32, 32)
 atlas = ExtResource("5_6vppx")
 region = Rect2(384, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_se86m"]
+atlas = ExtResource("10_1axi1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmx21"]
+atlas = ExtResource("10_1axi1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iydwo"]
+atlas = ExtResource("10_1axi1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7rpp"]
+atlas = ExtResource("10_1axi1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgbly"]
+atlas = ExtResource("10_1axi1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aatot"]
+atlas = ExtResource("10_1axi1")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2tqs"]
+atlas = ExtResource("10_1axi1")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v1ha"]
+atlas = ExtResource("10_1axi1")
+region = Rect2(224, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_jr56k"]
 animations = [{
 "frames": [{
@@ -261,6 +294,35 @@ animations = [{
 "loop": false,
 "name": &"shoot",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se86m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmx21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iydwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7rpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgbly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aatot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2tqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v1ha")
+}],
+"loop": false,
+"name": &"win",
+"speed": 6.0
 }]
 
 [node name="BubblePlayer" type="CharacterBody2D"]
@@ -288,9 +350,9 @@ sprite_frames = SubResource("SpriteFrames_daose")
 [node name="FishSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_jr56k")
-animation = &"shoot"
+animation = &"win"
 autoplay = "default"
-frame = 12
+frame = 7
 frame_progress = 1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

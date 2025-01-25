@@ -17,6 +17,7 @@ var BUBBLE_001: AudioStream = preload("res://audio/bubble-001.ogg")
 var BIG_BUBBLE_001: AudioStream = preload("res://audio/big_bubble1.ogg")
 var FISH_DEATH_1: AudioStream = preload("res://audio/fish_death1.ogg")
 @onready var fish_audio: AudioStreamPlayer2D = $FishAudio
+var played_win_animation: bool = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot_bubble") and not dying:
@@ -32,7 +33,12 @@ func move() -> void:
 	move_and_slide()
 
 func handle_animations() -> void:
-	if velocity.x > 10 or velocity.x < -10:
+	if Game.game_over_state and not dying:
+		if not played_win_animation:
+			played_win_animation = true
+			fish_sprite.play("win")
+		bubble_sprite.play("default")
+	elif velocity.x > 10 or velocity.x < -10:
 		bubble_sprite.play("shoot")
 		fish_sprite.play("shoot")
 		if velocity.x > 0:
