@@ -12,7 +12,7 @@ var attacking: bool = false
 var dying: bool = false
 var played_falling: bool = false
 var played_jumping: bool = false
-#var jumping: bool = false
+var jumping: bool = false
 
 
 func _ready() -> void:
@@ -63,6 +63,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * 2 * delta
 	else:
+		jumping = false
 		played_jumping = false
 		played_falling = false
 	# Handle jump.
@@ -75,7 +76,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
-		
+	
+	if Input.is_action_just_released("jump") and not is_on_floor() and velocity.y < 0 and jumping:
+		velocity.y -= clamp(velocity.y, JUMP_VELOCITY, 0)
+	
 	var direction := Input.get_axis("left", "right")
 	
 	move(direction)
@@ -102,6 +106,7 @@ func attack() -> void:
 	axis.process_mode = Node.PROCESS_MODE_DISABLED
 
 func jump() -> void:
+	jumping = true
 	print("jump")
 	velocity.y = JUMP_VELOCITY
 
@@ -116,6 +121,7 @@ func get_damage() -> void:
 	if not dying:
 		game.update_wins("bubble")
 		dying = true
+		await get_tree().create_timer(3).timeout
 		#queue_free()
 		respawn()
 

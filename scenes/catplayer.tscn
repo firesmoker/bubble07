@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bdpficipe4et0"]
+[gd_scene load_steps=51 format=3 uid="uid://bdpficipe4et0"]
 
 [ext_resource type="Script" path="res://scripts/catplayer.gd" id="1_syx8v"]
 [ext_resource type="Shape2D" uid="uid://bcey015rbkb5m" path="res://scene_resources/catplayer_damage_area.tres" id="2_07co7"]
@@ -179,26 +179,6 @@ region = Rect2(384, 0, 64, 64)
 atlas = ExtResource("4_mjrp2")
 region = Rect2(448, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y7oyx"]
-atlas = ExtResource("9_eqrde")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ydymj"]
-atlas = ExtResource("9_eqrde")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_moen4"]
-atlas = ExtResource("9_eqrde")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yrum3"]
-atlas = ExtResource("9_eqrde")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5sfgw"]
-atlas = ExtResource("9_eqrde")
-region = Rect2(192, 0, 48, 48)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_p07ug"]
 animations = [{
 "frames": [{
@@ -320,26 +300,6 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y7oyx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ydymj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_moen4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yrum3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5sfgw")
-}],
-"loop": true,
-"name": &"swipeeffect",
-"speed": 5.0
 }]
 
 [node name="Catplayer" type="CharacterBody2D"]
@@ -381,8 +341,9 @@ frame_progress = 1.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.98298, 1.9456)
 sprite_frames = SubResource("SpriteFrames_p07ug")
-animation = &"jump_down"
+animation = &"death"
 autoplay = "idle"
+frame_progress = 0.124374
 
 [connection signal="body_entered" from="BubbleDamager" to="BubbleDamager" method="_on_body_entered"]
 [connection signal="animation_finished" from="Axis/SlashAnimation" to="." method="_on_slash_animation_animation_finished"]
