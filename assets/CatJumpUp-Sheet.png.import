@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce60618gmv447"
-path="res://.godot/imported/background1.png-560a7a37486eb2f3dc9e13e121b9a28d.ctex"
+uid="uid://ckewbccqo5rno"
+path="res://.godot/imported/CatJumpUp-Sheet.png-ce89326a14d56a5f42be9d17b43b1a54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/background1.png"
-dest_files=["res://.godot/imported/background1.png-560a7a37486eb2f3dc9e13e121b9a28d.ctex"]
+source_file="res://assets/CatJumpUp-Sheet.png"
+dest_files=["res://.godot/imported/CatJumpUp-Sheet.png-ce89326a14d56a5f42be9d17b43b1a54.ctex"]
 
 [params]
 

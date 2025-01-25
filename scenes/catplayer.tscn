@@ -3,15 +3,15 @@
 [ext_resource type="Script" path="res://scripts/catplayer.gd" id="1_syx8v"]
 [ext_resource type="Shape2D" uid="uid://bcey015rbkb5m" path="res://scene_resources/catplayer_damage_area.tres" id="2_07co7"]
 [ext_resource type="Shape2D" uid="uid://ljub5wjleojk" path="res://scene_resources/catplayer_collider.tres" id="2_ffy5h"]
-[ext_resource type="Texture2D" uid="uid://b7kqv4ccr1cvy" path="res://assats/CatIdle-Sheet.png" id="3_71wjl"]
+[ext_resource type="Texture2D" uid="uid://b7kqv4ccr1cvy" path="res://assets/CatIdle-Sheet.png" id="3_71wjl"]
 [ext_resource type="Script" path="res://scripts/damager.gd" id="3_clu65"]
-[ext_resource type="Texture2D" uid="uid://c0jxnbhm345a2" path="res://assats/CatRun-Sheet.png" id="4_mjrp2"]
-[ext_resource type="Texture2D" uid="uid://c11wurlcs22t5" path="res://assats/CatAttack-Sheet.png" id="6_2c2ot"]
+[ext_resource type="Texture2D" uid="uid://c0jxnbhm345a2" path="res://assets/CatRun-Sheet.png" id="4_mjrp2"]
+[ext_resource type="Texture2D" uid="uid://c11wurlcs22t5" path="res://assets/CatAttack-Sheet.png" id="6_2c2ot"]
 [ext_resource type="PackedScene" uid="uid://wce32jjdb2ar" path="res://scenes/damager.tscn" id="6_ic3h7"]
-[ext_resource type="Texture2D" uid="uid://c06fq0mau56pd" path="res://assats/CatDeath-Sheet.png" id="8_gja7d"]
-[ext_resource type="Texture2D" uid="uid://ox6odcak0ali" path="res://assats/CatFallDown-Sheet.png" id="9_14ivv"]
-[ext_resource type="Texture2D" uid="uid://ckewbccqo5rno" path="res://assats/CatJumpUp-Sheet.png" id="9_47wsw"]
-[ext_resource type="Texture2D" uid="uid://bge1kedf3y0hg" path="res://assats/SwipeEffect-Sheet.png" id="9_eqrde"]
+[ext_resource type="Texture2D" uid="uid://c06fq0mau56pd" path="res://assets/CatDeath-Sheet.png" id="8_gja7d"]
+[ext_resource type="Texture2D" uid="uid://ox6odcak0ali" path="res://assets/CatFallDown-Sheet.png" id="9_14ivv"]
+[ext_resource type="Texture2D" uid="uid://ckewbccqo5rno" path="res://assets/CatJumpUp-Sheet.png" id="9_47wsw"]
+[ext_resource type="Texture2D" uid="uid://bge1kedf3y0hg" path="res://assets/SwipeEffect-Sheet.png" id="9_eqrde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n5yq"]
 size = Vector2(48, 73.4476)
@@ -135,17 +135,17 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("9_14ivv")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_or7mr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbgjt"]
 atlas = ExtResource("9_47wsw")
-region = Rect2(128, 0, 64, 64)
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8ovv"]
 atlas = ExtResource("9_47wsw")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbgjt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_or7mr"]
 atlas = ExtResource("9_47wsw")
-region = Rect2(0, 0, 64, 64)
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ceehn"]
 atlas = ExtResource("4_mjrp2")
@@ -280,13 +280,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_or7mr")
+"texture": SubResource("AtlasTexture_qbgjt")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k8ovv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qbgjt")
+"texture": SubResource("AtlasTexture_or7mr")
 }],
 "loop": false,
 "name": &"jump_up",
@@ -381,7 +381,7 @@ frame_progress = 1.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.98298, 1.9456)
 sprite_frames = SubResource("SpriteFrames_p07ug")
-animation = &"death"
+animation = &"jump_down"
 autoplay = "idle"
 
 [connection signal="body_entered" from="BubbleDamager" to="BubbleDamager" method="_on_body_entered"]

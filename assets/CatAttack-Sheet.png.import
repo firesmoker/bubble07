@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c06fq0mau56pd"
-path="res://.godot/imported/CatDeath-Sheet.png-e02647598f5b164edb287693c7685500.ctex"
+uid="uid://c11wurlcs22t5"
+path="res://.godot/imported/CatAttack-Sheet.png-5431d4480adfa525310c8c5525642d41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/CatDeath-Sheet.png"
-dest_files=["res://.godot/imported/CatDeath-Sheet.png-e02647598f5b164edb287693c7685500.ctex"]
+source_file="res://assets/CatAttack-Sheet.png"
+dest_files=["res://.godot/imported/CatAttack-Sheet.png-5431d4480adfa525310c8c5525642d41.ctex"]
 
 [params]
 

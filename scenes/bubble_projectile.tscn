@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/bubble_projectile.gd" id="1_cswgi"]
 [ext_resource type="PackedScene" uid="uid://biulo5q3iuki6" path="res://scenes/bubble_burst.tscn" id="2_qwsdm"]
-[ext_resource type="Texture2D" uid="uid://cgydnwcaje4g5" path="res://assats/BigBubbleShoot-Sheet.png" id="3_kw4jg"]
+[ext_resource type="Texture2D" uid="uid://cgydnwcaje4g5" path="res://assets/BigBubbleShoot-Sheet.png" id="3_kw4jg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdi5e"]
 radius = 55.1224

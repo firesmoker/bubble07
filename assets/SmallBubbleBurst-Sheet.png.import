@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckewbccqo5rno"
-path="res://.godot/imported/CatJumpUp-Sheet.png-d20361855c2ad825eaa676b118d87dda.ctex"
+uid="uid://bk5qom4hblxib"
+path="res://.godot/imported/SmallBubbleBurst-Sheet.png-99040343481f12b2d5f1103c18c2ef46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/CatJumpUp-Sheet.png"
-dest_files=["res://.godot/imported/CatJumpUp-Sheet.png-d20361855c2ad825eaa676b118d87dda.ctex"]
+source_file="res://assets/SmallBubbleBurst-Sheet.png"
+dest_files=["res://.godot/imported/SmallBubbleBurst-Sheet.png-99040343481f12b2d5f1103c18c2ef46.ctex"]
 
 [params]
 

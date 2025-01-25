@@ -1,22 +1,73 @@
-[gd_scene load_steps=3 format=3 uid="uid://biulo5q3iuki6"]
+[gd_scene load_steps=10 format=3 uid="uid://biulo5q3iuki6"]
 
 [ext_resource type="Script" path="res://scenes/bubble_burst.gd" id="1_vuxgj"]
+[ext_resource type="Texture2D" uid="uid://gmfg04dvweu5" path="res://assets/BigBubbleBurst-Sheet.png" id="2_fhmos"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdi5e"]
 radius = 92.4726
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe5f8"]
+atlas = ExtResource("2_fhmos")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vvkh"]
+atlas = ExtResource("2_fhmos")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4qx2"]
+atlas = ExtResource("2_fhmos")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ittso"]
+atlas = ExtResource("2_fhmos")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtyin"]
+atlas = ExtResource("2_fhmos")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0bsh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe5f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vvkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4qx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ittso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtyin")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
 
 [node name="BubbleBurst" type="Area2D"]
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("1_vuxgj")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.984139, 0.95283)
 shape = SubResource("CircleShape2D_sdi5e")
 debug_color = Color(0.964081, 0, 0.494897, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_l0bsh")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

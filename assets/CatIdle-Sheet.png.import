@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7kqv4ccr1cvy"
-path="res://.godot/imported/CatIdle-Sheet.png-c3c1f7ce809c714e63029880a3a1c5ed.ctex"
+path="res://.godot/imported/CatIdle-Sheet.png-c356e81ea8caf8868ba4ce454fd7dcfb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/CatIdle-Sheet.png"
-dest_files=["res://.godot/imported/CatIdle-Sheet.png-c3c1f7ce809c714e63029880a3a1c5ed.ctex"]
+source_file="res://assets/CatIdle-Sheet.png"
+dest_files=["res://.godot/imported/CatIdle-Sheet.png-c356e81ea8caf8868ba4ce454fd7dcfb.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by6ovuow1jr1t"
-path="res://.godot/imported/BubbleShootPointer.png-3853e8e3feee5341552f42b8479f8932.ctex"
+uid="uid://cwci7gs1k82kr"
+path="res://.godot/imported/FishIdle-Sheet.png-578053bb9845a22cd382ca44e431d0a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/BubbleShootPointer.png"
-dest_files=["res://.godot/imported/BubbleShootPointer.png-3853e8e3feee5341552f42b8479f8932.ctex"]
+source_file="res://assets/FishIdle-Sheet.png"
+dest_files=["res://.godot/imported/FishIdle-Sheet.png-578053bb9845a22cd382ca44e431d0a9.ctex"]
 
 [params]
 

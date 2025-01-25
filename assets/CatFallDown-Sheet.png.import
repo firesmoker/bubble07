@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c11wurlcs22t5"
-path="res://.godot/imported/CatAttack-Sheet.png-fe35ba463035cdb6bf4d35cb1cd879eb.ctex"
+uid="uid://ox6odcak0ali"
+path="res://.godot/imported/CatFallDown-Sheet.png-86f676586511bc10f1f5e1ad44f91a93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/CatAttack-Sheet.png"
-dest_files=["res://.godot/imported/CatAttack-Sheet.png-fe35ba463035cdb6bf4d35cb1cd879eb.ctex"]
+source_file="res://assets/CatFallDown-Sheet.png"
+dest_files=["res://.godot/imported/CatFallDown-Sheet.png-86f676586511bc10f1f5e1ad44f91a93.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx2vsjtcfls2u"
-path="res://.godot/imported/BigBubble-Sheet.png-a3bc1fea5f3a023e53b59901847802ac.ctex"
+uid="uid://ds33b6xh61hp5"
+path="res://.godot/imported/TileTemporary.png-74d71b517df127c67d8a08cd7bff336e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/BigBubble-Sheet.png"
-dest_files=["res://.godot/imported/BigBubble-Sheet.png-a3bc1fea5f3a023e53b59901847802ac.ctex"]
+source_file="res://assets/TileTemporary.png"
+dest_files=["res://.godot/imported/TileTemporary.png-74d71b517df127c67d8a08cd7bff336e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0jxnbhm345a2"
-path="res://.godot/imported/CatRun-Sheet.png-196603db350b0e63f53fe590c665babd.ctex"
+uid="uid://c6l8lgwl00khs"
+path="res://.godot/imported/FishDeath.png-84beb9591c7ee564ddc4f049f0846081.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/CatRun-Sheet.png"
-dest_files=["res://.godot/imported/CatRun-Sheet.png-196603db350b0e63f53fe590c665babd.ctex"]
+source_file="res://assets/FishDeath.png"
+dest_files=["res://.godot/imported/FishDeath.png-84beb9591c7ee564ddc4f049f0846081.ctex"]
 
 [params]
 

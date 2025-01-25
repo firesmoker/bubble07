@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds33b6xh61hp5"
-path="res://.godot/imported/TileTemporary.png-28f2a3fa69bb94493953d8b752b06c4e.ctex"
+uid="uid://bey7qdxtbftjq"
+path="res://.godot/imported/FishShoot-Sheet.png-5b3bf141d08c988cf77cfa7edeae3ebb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/TileTemporary.png"
-dest_files=["res://.godot/imported/TileTemporary.png-28f2a3fa69bb94493953d8b752b06c4e.ctex"]
+source_file="res://assets/FishShoot-Sheet.png"
+dest_files=["res://.godot/imported/FishShoot-Sheet.png-5b3bf141d08c988cf77cfa7edeae3ebb.ctex"]
 
 [params]
 

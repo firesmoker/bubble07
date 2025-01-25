@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bge1kedf3y0hg"
-path="res://.godot/imported/SwipeEffect-Sheet.png-f3f980322aaec8dde65d5b6c1e66ff87.ctex"
+uid="uid://gmfg04dvweu5"
+path="res://.godot/imported/BigBubbleBurst-Sheet.png-d21201ef44ca14b5c3ba6059ed085ef2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/SwipeEffect-Sheet.png"
-dest_files=["res://.godot/imported/SwipeEffect-Sheet.png-f3f980322aaec8dde65d5b6c1e66ff87.ctex"]
+source_file="res://assets/BigBubbleBurst-Sheet.png"
+dest_files=["res://.godot/imported/BigBubbleBurst-Sheet.png-d21201ef44ca14b5c3ba6059ed085ef2.ctex"]
 
 [params]
 
