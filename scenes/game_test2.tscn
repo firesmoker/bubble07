@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v18ey"]
 [ext_resource type="Texture2D" uid="uid://ce60618gmv447" path="res://assets/background1.png" id="2_6dq2v"]
-[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="2_d3vde"]
+[ext_resource type="PackedScene" uid="uid://d0huwtpqnt1f1" path="res://scenes/ui.tscn" id="2_d3vde"]
 [ext_resource type="PackedScene" uid="uid://bdpficipe4et0" path="res://scenes/catplayer.tscn" id="3_je4ub"]
 [ext_resource type="PackedScene" uid="uid://jr7d1wady43a" path="res://scenes/bubble_player.tscn" id="4_r0nuq"]
 [ext_resource type="PackedScene" uid="uid://ncbvum04cvdu" path="res://scenes/platform.tscn" id="5_f6urn"]
-[ext_resource type="PackedScene" path="res://scenes/damage_area.tscn" id="6_54cwn"]
+[ext_resource type="PackedScene" uid="uid://304cx5i6sfno" path="res://scenes/damage_area.tscn" id="6_54cwn"]
 [ext_resource type="Texture2D" uid="uid://j4pjqnbv4vi3" path="res://assets/Katana.png" id="8_6uom3"]
 [ext_resource type="Texture2D" uid="uid://cw1tuuig1r44d" path="res://assets/Stool.png" id="9_uqny4"]
 [ext_resource type="Texture2D" uid="uid://c8jcx84l3cf8u" path="res://assets/Table.png" id="10_7ex8c"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uj3f0"]
 
-[node name="Game" type="Node2D"]
+[node name="Game2" type="Node2D"]
 script = ExtResource("1_v18ey")
 
 [node name="UI" parent="." instance=ExtResource("2_d3vde")]
