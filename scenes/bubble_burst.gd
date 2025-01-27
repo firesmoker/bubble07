@@ -27,6 +27,9 @@ func _on_body_entered(body: Node2D) -> void:
 		audio_stream_player_2d.volume_db = clamp(audio_stream_player_2d.volume_db + 8,-1000,0)
 		#body.jump()
 		#body.detach_from_ground()
-		body.velocity += (body.global_position - global_position).normalized() * repel_intensity
+		var new_repel_velocity: Vector2 = (body.global_position - global_position).normalized() * repel_intensity
+		body.velocity.x += new_repel_velocity.x
+		body.velocity.y += new_repel_velocity.y * 0.5
+		#body.velocity += (body.global_position - global_position).normalized() * repel_intensity
 		body.get_pushed()
 		print("body eneterd burst!")
