@@ -23,6 +23,8 @@ var played_falling: bool = false
 var played_jumping: bool = false
 var jumping: bool = false
 var pushed: bool = false
+var push_recovery_counter: float = 0
+var push_recovery_time: float = 0.5
 
 func _ready() -> void:
 	slash_animation.visible = false
@@ -32,9 +34,9 @@ func _ready() -> void:
 
 func move(direction: float) -> void:
 	
-	if direction and not attacking:
+	if direction and not attacking and not pushed:
 		velocity.x = direction * SPEED
-	elif not attacking:
+	elif not attacking and not pushed:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if velocity.x > 0 and direction:
@@ -45,7 +47,7 @@ func move(direction: float) -> void:
 	elif direction:
 		axis.rotation = 0
 	
-	velocity += platform_velocity
+	#velocity += platform_velocity
 	move_and_slide()
 
 func handle_movement_animations(direction: float) -> void:
@@ -61,7 +63,7 @@ func handle_movement_animations(direction: float) -> void:
 	elif not attacking and is_on_floor():
 		animated_sprite_2d.play("idle")
 	
-	if velocity.x > 0 and direction:
+	if velocity.x > 0 and direction > 0:
 		animated_sprite_2d.flip_h = true
 		colision_right_up.disabled = false
 		colision_left_up.disabled = true
@@ -69,17 +71,20 @@ func handle_movement_animations(direction: float) -> void:
 		pass
 		#colision_right_up.disabled = false
 		#colision_left_up.disabled = true
-	elif direction:
+	elif direction < 0:
 		colision_right_up.disabled = true
 		colision_left_up.disabled = false
 		animated_sprite_2d.flip_h = false
 
 func _physics_process(delta: float) -> void:
 	if not dying:
+		
+		recover_from_push(delta)
+		
 		if not is_on_floor():
 			velocity += get_gravity() * 2 * delta
 		else:
-			pushed = false
+			#pushed = false
 			jumping = false
 			played_jumping = false
 			played_falling = false
@@ -107,6 +112,19 @@ func _physics_process(delta: float) -> void:
 		collision_shape_2d.disabled = true
 		velocity += get_gravity() * 2 * delta
 		move_and_slide()
+
+func recover_from_push(delta: float) -> void:
+	if pushed:
+		var recovery_modifier: float = 1
+		if is_on_floor():
+			recovery_modifier = 5
+		push_recovery_counter += delta * recovery_modifier
+	if push_recovery_counter >= push_recovery_time:
+		pushed = false
+		push_recovery_counter = 0
+	if velocity == Vector2(0,0):
+		pushed = false
+		push_recovery_counter = 0
 
 
 func attack() -> void:
@@ -159,6 +177,7 @@ func get_damage() -> void:
 
 func get_pushed() -> void:
 	pushed = true
+	push_recovery_counter = 0
 	audio_stream_player_2d.stream = CAT_GETS_HIT_1
 	audio_stream_player_2d.play()
 

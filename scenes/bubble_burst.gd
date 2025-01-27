@@ -2,7 +2,7 @@ extends Area2D
 
 var repel_velocity: Vector2 = Vector2(0,0)
 @onready var timer: Timer = $Timer
-var repel_intensity: float = 5000
+var repel_intensity: float = 3000
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.

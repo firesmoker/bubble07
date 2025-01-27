@@ -52,7 +52,7 @@ scale = Vector2(6.84342, 0.570187)
 [node name="Floor" parent="." instance=ExtResource("2_xt8os")]
 modulate = Color(0.554367, 0.339573, 0.29896, 1)
 material = SubResource("CanvasItemMaterial_uj3f0")
-position = Vector2(-19, 934)
+position = Vector2(-19, 900)
 scale = Vector2(6.84342, 0.570187)
 
 [node name="Left Wall" parent="." instance=ExtResource("2_xt8os")]
@@ -88,17 +88,18 @@ position = Vector2(1560, 444)
 scale = Vector2(3.47529, 0.684542)
 
 [node name="Table" parent="." instance=ExtResource("7_waw1j")]
+position = Vector2(5.99988, 808)
 
 [node name="Stool" parent="." instance=ExtResource("8_yd53u")]
 position = Vector2(976, 304)
 scale = Vector2(-0.284707, 1.30895)
 
 [node name="Stool2" parent="." instance=ExtResource("8_yd53u")]
-position = Vector2(-764, 803)
+position = Vector2(-764, 769)
 scale = Vector2(-0.284707, 1.30895)
 
 [node name="DamageArea" parent="." instance=ExtResource("6_ev8uw")]
-position = Vector2(-1392, 683)
+position = Vector2(-1392, 649)
 scale = Vector2(18.7866, 14.9554)
 
 [node name="DamageArea5" parent="." instance=ExtResource("6_ev8uw")]
@@ -416,7 +417,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("12_vems5")
 
 [node name="KatanaAddon2" type="Sprite2D" parent="."]
-position = Vector2(-1372, 702)
+position = Vector2(-1372, 668)
 scale = Vector2(2, 2)
 texture = ExtResource("12_vems5")
 
