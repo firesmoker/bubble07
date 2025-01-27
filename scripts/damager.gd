@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.get_damage()
+	if not Game.game_over_state:
+		body.get_damage()
