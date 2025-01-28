@@ -39,7 +39,6 @@ scale = Vector2(3, 3)
 JUMP_VELOCITY = -1300.0
 
 [node name="BubblePlayer" parent="." instance=ExtResource("4_2kjsh")]
-z_index = 0
 position = Vector2(475.168, -73.7118)
 scale = Vector2(3, 3)
 
@@ -137,6 +136,9 @@ direction = -1
 [node name="MovingPlatform2" parent="." instance=ExtResource("8_vlgm1")]
 position = Vector2(-301, 310)
 scale = Vector2(0.19078, 0.326316)
+speed = 200.0
+left_limit = -400.0
+right_limit = 400.0
 
 [node name="Katana" type="Sprite2D" parent="."]
 position = Vector2(1417, -1279)

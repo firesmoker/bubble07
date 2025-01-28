@@ -88,7 +88,7 @@ func get_damage() -> void:
 		fish_audio.play()
 		bubble_spawn.visible = false
 		falling = true
-		collision_shape_2d.disabled = true
+		collision_shape_2d.set_deferred("disabled",true)
 		bubble_sprite.play("death")
 		fish_sprite.play("death")
 		game.update_wins("cat")

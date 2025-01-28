@@ -21,4 +21,5 @@ func burst() -> void:
 	var new_burst = burst_scene.instantiate()
 	new_burst.repel_velocity = velocity * 4
 	new_burst.global_position = global_position
-	get_parent().add_child(new_burst)
+	get_parent().call_deferred("add_child",new_burst)
+	#get_parent().add_child(new_burst)

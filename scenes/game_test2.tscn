@@ -35,7 +35,6 @@ metadata/_edit_lock_ = true
 position = Vector2(-1226, -219)
 
 [node name="BubblePlayer" parent="." instance=ExtResource("4_r0nuq")]
-z_index = 0
 position = Vector2(475.168, -73.7118)
 scale = Vector2(2, 2)
 
